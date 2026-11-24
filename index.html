@@ -982,55 +982,180 @@
         margin-inline-start: 8px;
       }
       /* flows */
-      .fl {
-        display: grid;
-        gap: 14px;
-      }
-      .fr {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 18px 24px;
-        border: 1px solid var(--ln);
-        border-radius: 22px;
-        background: #ffffff06;
-        transition: border-color 0.3s;
-      }
-      .fr:hover {
-        border-color: var(--g);
-      }
-      .fr b {
-        padding: 7px 20px;
-        border-radius: 99px;
-        background: var(--n2);
-        border: 1px solid #c5a46d55;
-        font-weight: 500;
-        font-size: 14px;
-      }
-      .ar {
-        width: 46px;
-        height: 2px;
-        background: #c5a46d44;
-        position: relative;
-        margin: 0 4px;
+      .flow-widget {
+        padding: 26px clamp(18px, 4vw, 48px) 32px;
+        border: 1px solid #ffffff20;
+        border-radius: 28px;
+        background: radial-gradient(ellipse at 50% 50%, #32206455, #14213a 65%);
         overflow: hidden;
       }
-      .ar:after {
+      .flow-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+      .flow-filter {
+        border: 1px solid #ffffff25;
+        border-radius: 999px;
+        padding: 9px 18px;
+        background: #ffffff08;
+        color: var(--mu);
+        cursor: pointer;
+        font-size: 14px;
+        transition: color .22s, background .22s, border-color .22s, transform .22s;
+      }
+      .flow-filter:hover { transform: translateY(-2px); color: var(--tx); border-color: #c5a46d88; }
+      .flow-filter[aria-pressed="true"] {
+        color: var(--n1);
+        border-color: var(--g2);
+        background: linear-gradient(120deg, var(--g2), var(--g));
+        font-weight: 700;
+        box-shadow: 0 8px 24px #c5a46d25;
+      }
+      .flow-roadmap {
+        --route-y: 226px;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(var(--step-count), minmax(0, 1fr));
+        min-height: 452px;
+        direction: rtl;
+        isolation: isolate;
+      }
+      .flow-route-svg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .flow-route-base,
+      .flow-route-active {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+      .flow-route-base { stroke: #ffffff1c; stroke-width: 3; stroke-dasharray: 8 11; }
+      .flow-route-active {
+        stroke: var(--g2);
+        stroke-width: 3.5;
+        filter: drop-shadow(0 0 5px #e8d3a277);
+      }
+      .flow-step {
+        position: relative;
+        z-index: 1;
+        height: 452px;
+        min-width: 0;
+      }
+      .flow-step-card {
+        position: absolute;
+        inset-inline: 8px;
+        height: 170px;
+        padding: 18px 17px;
+        border: 1px solid #ffffff1b;
+        border-radius: 17px;
+        background: linear-gradient(145deg, #0b1428f5, #101b32f2);
+        box-shadow: 0 14px 34px #050b1760;
+        direction: rtl;
+        text-align: right;
+        opacity: 0;
+        transform: translateY(9px);
+        animation: flowCardIn .6s cubic-bezier(.22,1,.36,1) var(--step-delay, 0ms) both paused;
+      }
+      .flow-step.is-top .flow-step-card { top: 0; }
+      .flow-step.is-bottom .flow-step-card { bottom: 0; transform: translateY(-9px); }
+      .flow-step-card:after {
         content: "";
         position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 14px;
-        background: var(--g2);
-        animation: mv 2s linear infinite;
+        left: 50%;
+        width: 1px;
+        height: calc(var(--route-y) - 170px);
+        background: linear-gradient(var(--g2), #c5a46d20);
+        transform: scaleY(0);
+        transform-origin: top;
+        animation: flowStemIn .4s cubic-bezier(.22,1,.36,1) calc(var(--step-delay, 0ms) + 130ms) both paused;
       }
-      @keyframes mv {
-        from {
-          right: -14px;
+      .flow-step.is-top .flow-step-card:after { top: 100%; }
+      .flow-step.is-bottom .flow-step-card:after {
+        bottom: 100%;
+        transform-origin: bottom;
+        background: linear-gradient(#c5a46d20, var(--g2));
+      }
+      .flow-step-meta {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--g2);
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      .flow-step-index { font-weight: 700; letter-spacing: .06em; }
+      .flow-step-title { margin: 0 0 7px; color: var(--tx); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.55; }
+      .flow-step-desc { margin: 0; color: var(--mu); font-size: 12px; line-height: 1.75; }
+      .flow-step-node {
+        position: absolute;
+        top: var(--route-y);
+        left: 50%;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid #e8d3a2a0;
+        border-radius: 50%;
+        color: var(--g2);
+        background: #111a2e;
+        box-shadow: 0 0 0 7px #c5a46d12, 0 0 26px #c5a46d20;
+        font-size: 12px;
+        font-weight: 700;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.88);
+        animation: flowNodeIn .45s cubic-bezier(.22,1,.36,1) var(--step-delay, 0ms) both paused;
+      }
+      .flow-roadmap.is-playing .flow-step-card,
+      .flow-roadmap.is-playing .flow-step-node,
+      .flow-roadmap.is-playing .flow-step-card:after { animation-play-state: running; }
+      @keyframes flowCardIn { to { opacity: 1; transform: translateY(0); } }
+      @keyframes flowStemIn { to { transform: scaleY(1); } }
+      @keyframes flowNodeIn { to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+      @media (max-width: 760px) {
+        .flow-widget { padding: 20px 14px 24px; border-radius: 22px; }
+        .flow-filters { gap: 8px; margin-bottom: 12px; }
+        .flow-filter { padding: 8px 13px; font-size: 12px; }
+        .flow-roadmap { display: flex; flex-direction: column; gap: 12px; min-height: 0; padding-inline-start: 2px; }
+        .flow-step { height: auto; min-height: 110px; display: grid; grid-template-columns: 52px 1fr; align-items: center; gap: 12px; }
+        .flow-step-card,
+        .flow-step.is-top .flow-step-card,
+        .flow-step.is-bottom .flow-step-card {
+          position: relative;
+          grid-column: 2;
+          grid-row: 1;
+          inset: auto;
+          height: auto;
+          min-height: 102px;
+          padding: 14px;
+          transform: translateX(-9px);
         }
-        to {
-          right: 100%;
+        .flow-step-card:after { display: none; }
+        .flow-step-node {
+          top: 50%;
+          left: 26px;
+          grid-column: 1;
+          grid-row: 1;
+          width: 42px;
+          height: 42px;
+          transform: translate(-50%, -50%) scale(.88);
         }
+        .flow-route-base,
+        .flow-route-active { stroke-width: 2.5; }
+        .flow-step-title { font-size: 15px; }
+        .flow-step-desc { font-size: 11px; }
+        .flow-step-card { animation-name: flowCardInMobile; }
+        @keyframes flowCardInMobile { from { opacity: 0; transform: translateX(-9px); } to { opacity: 1; transform: translateX(0); } }
       }
       /* sectors */
       .sc2 {
@@ -2676,10 +2801,18 @@
           <div class="eb">ترابط كامل</div>
           <h2>كل عملية بتحرّك اللي بعدها لوحدها</h2>
           <p class="sb">
-            بيع واحد بيخصم من المخزون ويثبت الإيراد ويولّد القيد المحاسبي، من
-            غير إدخال مرتين.
+            اختار نوع العملية وشوف خطواتها مترابطة إزاي من البداية لحد التقارير،
+            من غير إدخال البيانات مرتين.
           </p>
-          <div class="fl" id="fl"></div>
+          <div class="flow-widget" id="flow-widget">
+            <div class="flow-filters" id="flow-filters" role="group" aria-label="اختار مسار العملية"></div>
+            <div class="flow-roadmap" id="flow-roadmap" aria-live="polite">
+              <svg class="flow-route-svg" id="flow-route-svg" aria-hidden="true" preserveAspectRatio="none">
+                <path class="flow-route-base" id="flow-route-base"></path>
+                <path class="flow-route-active" id="flow-route-active"></path>
+              </svg>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -3439,22 +3572,157 @@
         show(0);
         /* flows */
         var FL = [
-          ["المبيعات", "المخزون", "المالية", "المحاسبة", "التقارير"],
-          ["المشتريات", "الموردين", "المخزون", "المدفوعات"],
-          ["العملاء", "المبيعات", "التحصيل", "حسابات العملاء"],
-          ["الموظفين", "الصلاحيات", "العمليات", "الأداء"],
+          { name: "المبيعات", steps: [
+            ["البيع", "تسجيل الفاتورة وخصم الكمية فورًا"],
+            ["المخزون", "تحديث رصيد الأصناف بعد إتمام البيع"],
+            ["المالية", "إثبات الإيراد وحركة الخزينة"],
+            ["المحاسبة", "إنشاء القيد المحاسبي تلقائيًا"],
+            ["التقارير", "تحديث المؤشرات والتقارير لحظيًا"],
+          ] },
+          { name: "المشتريات", steps: [
+            ["المشتريات", "تسجيل طلب الشراء وفاتورة المورد"],
+            ["الموردين", "تحديث رصيد المورد وحسابه"],
+            ["المخزون", "إضافة الكميات المستلمة للمستودع"],
+            ["المدفوعات", "تسجيل المبلغ المستحق أو المدفوع"],
+          ] },
+          { name: "العملاء", steps: [
+            ["العملاء", "فتح الملف والرصيد الخاص بالعميل"],
+            ["المبيعات", "ربط الفواتير بحساب العميل"],
+            ["التحصيل", "تسجيل الدفعات وتحديث الرصيد"],
+            ["حسابات العملاء", "عرض كشف الحساب والمستحقات"],
+          ] },
+          { name: "الموظفين", steps: [
+            ["الموظفين", "إدارة بيانات فريق العمل"],
+            ["الصلاحيات", "تحديد الوصول حسب دور كل موظف"],
+            ["العمليات", "تسجيل ومتابعة نشاط الفروع"],
+            ["الأداء", "مراجعة النتائج ومؤشرات الأداء"],
+          ] },
         ];
-        g("fl").innerHTML = FL.map(function (r) {
-          return (
-            '<div class="fr">' +
-            r
-              .map(function (t) {
-                return "<b>" + t + "</b>";
-              })
-              .join('<span class="ar"></span>') +
-            "</div>"
-          );
-        }).join("");
+        var flowFilters = g("flow-filters");
+        var flowRoadmap = g("flow-roadmap");
+        var flowRouteSvg = g("flow-route-svg");
+        var flowRouteBase = g("flow-route-base");
+        var flowRouteActive = g("flow-route-active");
+        var flowVisible = false;
+        var flowResizeObserver;
+        var flowRouteAnimation = null;
+        FL.forEach(function (flow, i) {
+          var button = document.createElement("button");
+          button.type = "button";
+          button.className = "flow-filter";
+          button.textContent = flow.name;
+          button.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+          button.addEventListener("click", function () { renderFlow(i); });
+          flowFilters.appendChild(button);
+        });
+        function drawFlowRoute(animate) {
+          var roadRect = flowRoadmap.getBoundingClientRect();
+          if (!roadRect.width || !roadRect.height) return;
+          if (flowRouteAnimation) {
+            flowRouteAnimation.cancel();
+            flowRouteAnimation = null;
+          }
+          var mobile = window.matchMedia("(max-width: 760px)").matches;
+          flowRoadmap.style.setProperty("--step-count", flowRoadmap.querySelectorAll(".flow-step").length);
+          flowRouteSvg.setAttribute("viewBox", "0 0 " + roadRect.width + " " + roadRect.height);
+          var points = Array.from(flowRoadmap.querySelectorAll(".flow-step-node")).map(function (node) {
+            var rect = node.getBoundingClientRect();
+            return { x: rect.left + rect.width / 2 - roadRect.left, y: rect.top + rect.height / 2 - roadRect.top };
+          });
+          if (!points.length) return;
+          var path = "M " + points[0].x + " " + points[0].y;
+          for (var i = 1; i < points.length; i++) {
+            var a = points[i - 1], b = points[i];
+            var dx = b.x - a.x, dy = b.y - a.y;
+            if (mobile) {
+              path += " C " + (a.x + 18) + " " + (a.y + dy * .35) + ", " + (b.x - 18) + " " + (b.y - dy * .35) + ", " + b.x + " " + b.y;
+            } else {
+              var midX = a.x + dx / 2;
+              var wave = (i % 2 ? -22 : 22);
+              path += " C " + midX + " " + (a.y + wave) + ", " + midX + " " + (b.y + wave) + ", " + b.x + " " + b.y;
+            }
+          }
+          flowRouteBase.setAttribute("d", path);
+          flowRouteActive.setAttribute("d", path);
+          var length = flowRouteActive.getTotalLength();
+          flowRouteActive.style.strokeDasharray = length;
+          flowRouteActive.style.strokeDashoffset = animate ? length : (flowVisible ? 0 : length);
+          if (animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches && flowRouteActive.animate) {
+            flowRouteAnimation = flowRouteActive.animate(
+              [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
+              { duration: 1450, easing: "cubic-bezier(.22,1,.36,1)", fill: "both" },
+            );
+          }
+        }
+        function playFlow() {
+          flowRoadmap.classList.remove("is-playing");
+          drawFlowRoute(!window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+          void flowRoadmap.offsetWidth;
+          flowRoadmap.classList.add("is-playing");
+        }
+        function renderFlow(index) {
+          var flow = FL[index];
+          flowFilters.querySelectorAll(".flow-filter").forEach(function (button, i) {
+            button.setAttribute("aria-pressed", i === index ? "true" : "false");
+          });
+          flowRoadmap.classList.remove("is-playing");
+          flowRoadmap.querySelectorAll(".flow-step").forEach(function (step) { step.remove(); });
+          flowRoadmap.style.setProperty("--step-count", flow.steps.length);
+          flow.steps.forEach(function (step, i) {
+            var item = document.createElement("article");
+            item.className = "flow-step " + (i % 2 === 0 ? "is-top" : "is-bottom");
+            item.style.setProperty("--step-delay", (400 + i * 170) + "ms");
+            item.setAttribute("aria-label", "الخطوة " + (i + 1) + ": " + step[0]);
+            var card = document.createElement("div");
+            card.className = "flow-step-card";
+            var meta = document.createElement("div");
+            meta.className = "flow-step-meta";
+            var number = document.createElement("span");
+            number.className = "flow-step-index";
+            number.textContent = String(i + 1).padStart(2, "0");
+            var label = document.createElement("span");
+            label.textContent = "خطوة " + (i + 1);
+            meta.append(number, label);
+            var title = document.createElement("h3");
+            title.className = "flow-step-title";
+            title.textContent = step[0];
+            var description = document.createElement("p");
+            description.className = "flow-step-desc";
+            description.textContent = step[1];
+            card.append(meta, title, description);
+            var node = document.createElement("span");
+            node.className = "flow-step-node";
+            node.textContent = String(i + 1).padStart(2, "0");
+            node.setAttribute("aria-hidden", "true");
+            item.append(card, node);
+            flowRoadmap.appendChild(item);
+          });
+          flowRoadmap.setAttribute("aria-label", "خط سير " + flow.name + ": " + flow.steps.map(function (step) { return step[0]; }).join("، ثم "));
+          requestAnimationFrame(function () {
+            drawFlowRoute(false);
+            if (flowVisible) playFlow();
+          });
+        }
+        renderFlow(0);
+        if ("IntersectionObserver" in window) {
+          var flowObserver = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+              flowVisible = true;
+              playFlow();
+              flowObserver.disconnect();
+            }
+          }, { threshold: 0.2 });
+          flowObserver.observe(flowRoadmap);
+        } else {
+          flowVisible = true;
+          playFlow();
+        }
+        if ("ResizeObserver" in window) {
+          flowResizeObserver = new ResizeObserver(function () { drawFlowRoute(false); });
+          flowResizeObserver.observe(flowRoadmap);
+        } else {
+          window.addEventListener("resize", function () { drawFlowRoute(false); });
+        }
         /* sectors */
         var S = [
           {
