@@ -2929,6 +2929,179 @@
         }
       }
     </style>
+    <style id="sa-motion-3">
+      /* ===== Motion layer 3: aurora, spotlight borders, cursor ring, scroll-spy ===== */
+      @media (prefers-reduced-motion: no-preference) {
+        .sa-aurora {
+          position: absolute;
+          inset: -35%;
+          z-index: -1;
+          pointer-events: none;
+          opacity: 0.5;
+          filter: blur(64px);
+          background: conic-gradient(
+            from 0deg,
+            #c5a46d00,
+            #c5a46d66,
+            #2b4f8a77,
+            #e8d3a22e,
+            #3a6bc455,
+            #c5a46d00
+          );
+          -webkit-mask-image: radial-gradient(
+            closest-side,
+            #000 35%,
+            transparent
+          );
+          mask-image: radial-gradient(closest-side, #000 35%, transparent);
+          animation: saSpin 46s linear infinite;
+        }
+        @keyframes saSpin {
+          to {
+            rotate: 360deg;
+          }
+        }
+        .sa-orb {
+          animation: saDrift 19s ease-in-out infinite alternate;
+        }
+        .sa-orb:nth-of-type(even) {
+          animation-duration: 27s;
+          animation-direction: alternate-reverse;
+        }
+        @keyframes saDrift {
+          from {
+            translate: 0 0;
+            scale: 1;
+          }
+          to {
+            translate: 46px -38px;
+            scale: 1.18;
+          }
+        }
+        .hero h1 em {
+          background: linear-gradient(
+            100deg,
+            #c5a46d 20%,
+            #fff3d1 45%,
+            #e8d3a2 55%,
+            #c5a46d 80%
+          );
+          background-size: 260% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: saShine 7s ease-in-out infinite alternate;
+        }
+        @keyframes saShine {
+          from {
+            background-position: 100% 0;
+          }
+          to {
+            background-position: 0 0;
+          }
+        }
+        .btn {
+          position: relative;
+          overflow: hidden;
+        }
+        .btn.bg:after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background: linear-gradient(
+            110deg,
+            transparent 35%,
+            #fff8 50%,
+            transparent 65%
+          );
+          translate: -130% 0;
+          animation: saSweep 5s ease-in-out infinite 1.8s;
+        }
+        @keyframes saSweep {
+          0%,
+          55% {
+            translate: -130% 0;
+          }
+          100% {
+            translate: 130% 0;
+          }
+        }
+        .sa-rip {
+          position: absolute;
+          border-radius: 50%;
+          pointer-events: none;
+          width: 12px;
+          height: 12px;
+          margin: -6px 0 0 -6px;
+          background: #fff6;
+          animation: saRip 0.7s ease-out forwards;
+        }
+        @keyframes saRip {
+          to {
+            scale: 22;
+            opacity: 0;
+          }
+        }
+        .lk a.sa-cur {
+          color: var(--g2);
+        }
+        .lk a.sa-cur:after {
+          transform: scaleX(1);
+          box-shadow: 0 0 12px var(--g);
+        }
+        .sa-spot {
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          pointer-events: none;
+          opacity: 0;
+          z-index: 3;
+          transition: opacity 0.35s;
+          background: radial-gradient(
+            320px circle at var(--mx, 50%) var(--my, 50%),
+            #c5a46d2e,
+            transparent 65%
+          );
+        }
+        .sa-spot:after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          padding: 1.5px;
+          background: radial-gradient(
+            220px circle at var(--mx, 50%) var(--my, 50%),
+            #e8d3a2,
+            transparent 70%
+          );
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask:
+            linear-gradient(#000 0 0) content-box exclude,
+            linear-gradient(#000 0 0);
+        }
+        :hover > .sa-spot {
+          opacity: 1;
+        }
+        .sa-dust {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+        }
+      }
+      @media (max-width: 760px) {
+        .sa-aurora {
+          opacity: 0.35;
+          filter: blur(44px);
+        }
+      }
+    </style>
   </head>
   <body>
     <div
@@ -4859,6 +5032,140 @@
           }
           requestAnimationFrame(loop);
         })();
+      })();
+    </script>
+    <script id="sa-motion-3-js">
+      (function () {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+        var hero = document.querySelector(".hero");
+        if (hero) {
+          var au = document.createElement("div");
+          au.className = "sa-aurora";
+          au.setAttribute("aria-hidden", "true");
+          hero.appendChild(au);
+        }
+        /* scroll-spy for nav */
+        var links = [].slice.call(
+          document.querySelectorAll("#lk a[href^='#']"),
+        );
+        if (links.length && "IntersectionObserver" in window) {
+          var spy = new IntersectionObserver(
+            function (es) {
+              es.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                links.forEach(function (a) {
+                  a.classList.toggle(
+                    "sa-cur",
+                    a.getAttribute("href") === "#" + e.target.id,
+                  );
+                });
+              });
+            },
+            { rootMargin: "-45% 0px -50% 0px" },
+          );
+          links.forEach(function (a) {
+            var s = document.getElementById(a.getAttribute("href").slice(1));
+            if (s) spy.observe(s);
+          });
+        }
+        /* click ripple */
+        document.addEventListener("click", function (e) {
+          var b = e.target.closest && e.target.closest(".btn");
+          if (!b) return;
+          var r = b.getBoundingClientRect(),
+            i = document.createElement("i");
+          i.className = "sa-rip";
+          i.style.left = e.clientX - r.left + "px";
+          i.style.top = e.clientY - r.top + "px";
+          b.appendChild(i);
+          setTimeout(function () {
+            i.remove();
+          }, 750);
+        });
+        /* rising gold dust in the CTA section */
+        var cs = document.getElementById("cta");
+        if (cs) {
+          var cv = document.createElement("canvas"),
+            cx = cv.getContext("2d"),
+            W = 0,
+            H = 0,
+            ps = [],
+            on = false;
+          cv.className = "sa-dust";
+          cv.setAttribute("aria-hidden", "true");
+          cs.insertBefore(cv, cs.firstChild);
+          var rs = function () {
+            var d = Math.min(devicePixelRatio || 1, 2);
+            W = cs.clientWidth;
+            H = cs.clientHeight;
+            cv.width = W * d;
+            cv.height = H * d;
+            cx.setTransform(d, 0, 0, d, 0, 0);
+            ps = [];
+            for (var i = 0, n = W < 760 ? 28 : 60; i < n; i++)
+              ps.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: 0.6 + Math.random() * 1.8,
+                v: 0.25 + Math.random() * 0.7,
+                ph: Math.random() * 6.28,
+                a: 0.3 + Math.random() * 0.6,
+              });
+          };
+          rs();
+          addEventListener("resize", rs);
+          new IntersectionObserver(function (e) {
+            on = e[0].isIntersecting;
+          }).observe(cs);
+          (function dl(t) {
+            if (on && !document.hidden) {
+              cx.clearRect(0, 0, W, H);
+              ps.forEach(function (p) {
+                p.y -= p.v;
+                p.x += Math.sin(t / 1400 + p.ph) * 0.35;
+                if (p.y < -10) {
+                  p.y = H + 10;
+                  p.x = Math.random() * W;
+                }
+                var tw = 0.55 + 0.45 * Math.sin(t / 500 + p.ph),
+                  g = cx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5);
+                g.addColorStop(
+                  0,
+                  "rgba(255,240,200," + (p.a * tw).toFixed(2) + ")",
+                );
+                g.addColorStop(1, "rgba(197,164,109,0)");
+                cx.fillStyle = g;
+                cx.beginPath();
+                cx.arc(p.x, p.y, p.r * 5, 0, 6.283);
+                cx.fill();
+              });
+            }
+            requestAnimationFrame(dl);
+          })(0);
+        }
+        if (!fine) return;
+        /* cursor-following gold border + glow on cards */
+        var sel = ".wi,.sx,.pnl,.cta-card-bg";
+        addEventListener(
+          "pointermove",
+          function (e) {
+            var t = e.target.closest(sel);
+            if (!t) return;
+            var s = t.__sp;
+            if (!s || !s.isConnected) {
+              if (getComputedStyle(t).position === "static")
+                t.style.position = "relative";
+              s = t.__sp = document.createElement("i");
+              s.className = "sa-spot";
+              t.appendChild(s);
+            }
+            var r = t.getBoundingClientRect();
+            s.style.setProperty("--mx", e.clientX - r.left + "px");
+            s.style.setProperty("--my", e.clientY - r.top + "px");
+          },
+          { passive: true },
+        );
       })();
     </script>
   </body>
