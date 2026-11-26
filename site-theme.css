@@ -1,0 +1,343 @@
+:root {
+  --n1: #0b1526;
+  --n2: #12213a;
+  --n3: #1a2e4f;
+  --g: #c5a46d;
+  --g2: #e8d3a2;
+  --tx: #eef1f8;
+  --mu: #9fadc7;
+  --ln: #ffffff1a;
+}
+
+body {
+  background: var(--n1);
+  color: var(--tx);
+  font-family: Alexandria, system-ui, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: Alexandria, system-ui, sans-serif;
+}
+
+main :is(h1, h2, h3) {
+  font-family: Alexandria, system-ui, sans-serif;
+  text-wrap: balance;
+}
+
+main p {
+  font-weight: 400;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+main :is(.ey, .eyebrow, .badge) {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+main :is(.sub, .lead) {
+  font-weight: 400;
+  line-height: 1.95;
+}
+
+main > section:nth-of-type(even) > .wrap > :is(.title, h2) {
+  color: #0b1526;
+}
+
+main > section:nth-of-type(even) > .wrap > :is(.sub, p) {
+  color: #56627e;
+}
+
+main > section:nth-of-type(even) .ab-story-copy .title {
+  color: #0b1526;
+}
+
+main > section {
+  --tx: #eef1f8;
+  --mu: #9fadc7;
+  --ln: #ffffff1a;
+  --g: #c5a46d;
+  --g2: #e8d3a2;
+  color: var(--tx);
+  background-color: var(--n1) !important;
+  background-image:
+    radial-gradient(ellipse at 88% 8%, #1a2e4f88, transparent 44%),
+    linear-gradient(155deg, var(--n2), var(--n1) 72%) !important;
+}
+
+main > section:nth-of-type(even) {
+  --tx: #0b1526;
+  --mu: #56627e;
+  --ln: #0b152622;
+  --g: #9a7a3c;
+  --g2: #765a2d;
+  color: var(--tx);
+  background-color: #f6f2e9 !important;
+  background-image:
+    radial-gradient(ellipse at 88% 8%, #c5a46d12, transparent 42%),
+    linear-gradient(160deg, #f6f2e9, #f2ecdf) !important;
+}
+
+main > section:first-of-type {
+  background-image:
+    radial-gradient(ellipse at 82% 24%, #1a2e4fcc, transparent 48%),
+    radial-gradient(ellipse at 12% 88%, #c5a46d12, transparent 42%),
+    linear-gradient(145deg, var(--n1), var(--n2) 62%, var(--n3)) !important;
+}
+
+main > section.lt,
+main > section.tint,
+main > section.dk,
+main > section.dkp,
+main > section.ab-section,
+main > section.ab-dark,
+main > section.contact-section,
+main > section.faq-section,
+main > section.why-section {
+  --tx: #eef1f8;
+  --mu: #9fadc7;
+  --ln: #ffffff1a;
+  --g: #c5a46d;
+  --g2: #e8d3a2;
+  color: var(--tx);
+}
+
+main > section.dkp {
+  background-image:
+    radial-gradient(ellipse at 88% 10%, #1a2e4fcc, transparent 48%),
+    linear-gradient(150deg, var(--n2), var(--n1) 76%) !important;
+}
+
+main > section:nth-of-type(even) :is(
+  .card,
+  .sector,
+  .plan,
+  .ic,
+  .glass,
+  .form-shell,
+  .aside-card,
+  .aside-note,
+  .faq-item,
+  .ab-story-art,
+  .quote,
+  .why-card
+) {
+  --tx: #eef1f8;
+  --mu: #9fadc7;
+  --ln: #ffffff1a;
+  --g: #c5a46d;
+  --g2: #e8d3a2;
+  color: #eef1f8;
+  border-color: #ffffff20;
+  background-color: #12213a;
+  background-image: linear-gradient(145deg, #1a2e4f, #0b1526);
+}
+
+main > section:nth-of-type(even) :is(
+  .card,
+  .sector,
+  .plan,
+  .ic,
+  .glass,
+  .form-shell,
+  .aside-card,
+  .aside-note,
+  .faq-item,
+  .ab-story-art,
+  .quote,
+  .why-card
+) .sub {
+  color: #9fadc7;
+}
+
+main > section:nth-of-type(even) .sub,
+main > section:nth-of-type(even) .ey,
+main > section:nth-of-type(even) .eyebrow {
+  color: var(--mu);
+}
+
+main > section:nth-of-type(even) .ey,
+main > section:nth-of-type(even) .eyebrow {
+  color: #9a7a3c;
+}
+
+main > section:nth-of-type(even) :is(.bo, .text-link, .aside-link, .ab-text-link) {
+  color: #9a7a3c;
+}
+
+main > section:nth-of-type(even) .ab-story-copy > p {
+  color: #56627e;
+}
+
+main > section:nth-of-type(even) .ab-pillars .card h3 {
+  color: #e8d3a2;
+}
+
+/* Keep controls and copy readable where page-specific styles use old palettes. */
+main > section:nth-of-type(even) .tabs .tab:not(.on),
+main > section:nth-of-type(even) .sw button:not(.on) {
+  color: #35445f;
+}
+
+main > section:nth-of-type(even) .tabs .tab:not(.on) {
+  border-color: #35445f55;
+  background: #fffaf0;
+}
+
+main > section:nth-of-type(even) .tabs .tab:not(.on):hover,
+main > section:nth-of-type(even) .sw button:not(.on):hover {
+  color: #0b1526;
+}
+
+main > section:nth-of-type(even) .sw {
+  border-color: #0b152633;
+  background: #0b15260a;
+}
+
+main > section:nth-of-type(even) .half ul,
+main > section:nth-of-type(even) .fa p,
+main > section:nth-of-type(even) > .wrap > .sub,
+main > section:nth-of-type(even) > .wrap > p {
+  color: #46536c;
+}
+
+main > section:nth-of-type(even) :is(.sector, .ic, .card, .plan, .glass, .faq-item, .why-card) :is(p, ul, li, .sub, .d) {
+  color: #c3cee0;
+}
+
+main > section:nth-of-type(even) :is(.sector, .ic, .card, .plan, .glass, .faq-item, .why-card) h3 {
+  color: #eef1f8;
+}
+
+/* Feature detail panels sit directly on the light section background. */
+main > section:nth-of-type(even) .detail {
+  color: #0b1526;
+  border-color: #0b152622;
+  background: #fffaf0;
+}
+
+main > section:nth-of-type(even) .detail :is(h3, p, ul, li) {
+  color: #46536c;
+}
+
+main > section:nth-of-type(even) .detail h3 {
+  color: #0b1526;
+}
+
+main > section:nth-of-type(even) .detail li::marker {
+  color: #9a7a3c;
+}
+
+main > section:nth-of-type(even) .detail .benefit {
+  color: #765a2d;
+  background: #9a7a3c1c;
+}
+
+main > section:nth-of-type(even) .checks > div {
+  color: #35445f;
+  border-color: #0b152633;
+  background-color: #fffaf0;
+}
+
+main > section:nth-of-type(even) .checks > div i {
+  color: #765a2d;
+  background: #9a7a3c24;
+}
+
+/* The solution selector is a dark panel placed inside a light section. */
+main > section:nth-of-type(even) .selector {
+  color: #eef1f8;
+}
+
+main > section:nth-of-type(even) .selector :is(h2, h3, h4, b, strong) {
+  color: #eef1f8;
+}
+
+main > section:nth-of-type(even) .selector :is(p, ul, li, small, .sub) {
+  color: #c3cee0;
+}
+
+/* Some pages place their dark CTA card in a light final section. */
+main > section:nth-of-type(even) .cta {
+  color: #eef1f8;
+}
+
+main > section:nth-of-type(even) .cta :is(h2, h3) {
+  color: #eef1f8;
+}
+
+main > section:nth-of-type(even) .cta p {
+  color: #c3cee0;
+}
+
+/* Keep the alternate sections in the same warm light tone as the home page. */
+main > section:nth-of-type(even) {
+  --tx: #0b1526;
+  --mu: #56627e;
+  --ln: #0b152622;
+  --g: #9a7a3c;
+  --g2: #765a2d;
+  color: #0b1526;
+  background-color: #f6f2e9 !important;
+  background-image:
+    radial-gradient(ellipse at 88% 8%, #c5a46d12, transparent 42%),
+    linear-gradient(160deg, #f6f2e9, #f2ecdf) !important;
+}
+
+main > section > .wrap {
+  isolation: isolate;
+}
+
+main > section .card,
+main > section .sector,
+main > section .plan,
+main > section .faq-item,
+main > section .ab-value-card,
+main > section .why-card {
+  transition-property: transform, border-color, box-shadow, background-color;
+  transition-duration: 280ms;
+  transition-timing-function: ease;
+}
+
+main > section .card:hover,
+main > section .sector:hover,
+main > section .plan:hover,
+main > section .faq-item:hover,
+main > section .ab-value-card:hover,
+main > section .why-card:hover {
+  border-color: #c5a46d99;
+  box-shadow: 0 16px 38px #0005, 0 0 24px #c5a46d12;
+}
+
+.site-motion-ready main > section:not(:first-of-type) > .site-section-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.site-motion-ready main > section:not(:first-of-type).site-section-in > .site-section-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-motion-ready main > section:not(:first-of-type) > .site-section-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  main > section .card,
+  main > section .sector,
+  main > section .plan,
+  main > section .faq-item,
+  main > section .ab-value-card,
+  main > section .why-card {
+    transition: none;
+  }
+}

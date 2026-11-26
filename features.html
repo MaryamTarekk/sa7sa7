@@ -1,0 +1,2201 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b1526" />
+    <meta
+      name="description"
+      content="اكتشف وحدات صحصح ERP وكيف تعمل المبيعات والمخزون والحسابات والفروع معاً."
+    />
+    <title>المميزات — صحصح ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        sessionStorage.sa7 && document.documentElement.classList.add("nointro");
+        sessionStorage.sa7 = 1;
+      } catch (e) {}
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --n1: #0b1526;
+        --n2: #12213a;
+        --n3: #1a2e4f;
+        --g: #c5a46d;
+        --g2: #e8d3a2;
+        --tx: #eef1f8;
+        --mu: #9fadc7;
+        --ln: #ffffff1a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 92px;
+      }
+      body {
+        margin: 0;
+        background: var(--n1);
+        color: var(--tx);
+        font:
+          300 15px/1.9 Alexandria,
+          system-ui,
+          sans-serif;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      .wrap {
+        width: min(1160px, calc(100% - 40px));
+        margin: auto;
+      }
+      header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 40;
+        border-bottom: 1px solid var(--ln);
+        background: #0b1526e8;
+        backdrop-filter: blur(16px);
+      }
+      nav {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .logo img {
+        width: 130px;
+        height: 46px;
+        object-fit: contain;
+      }
+      .links {
+        display: flex;
+        gap: 26px;
+        color: var(--mu);
+        font-size: 13px;
+      }
+      .links a:hover {
+        color: var(--g2);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 20px;
+        border: 1px solid var(--g);
+        border-radius: 13px;
+        font-weight: 700;
+        font-size: 13px;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+      .gold {
+        background: linear-gradient(120deg, var(--g2), var(--g));
+        color: var(--n1);
+        box-shadow: 0 12px 32px #c5a46d33;
+      }
+      .outline {
+        color: var(--g2);
+      }
+      .hero {
+        position: relative;
+        padding: 78px 0 90px;
+        overflow: hidden;
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(600px 460px at 18% 30%, #c5a46d26, transparent 70%),
+          radial-gradient(720px 520px at 85% 60%, #2b4f8a44, transparent 70%);
+        pointer-events: none;
+      }
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1.08fr;
+        gap: 45px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-flex;
+        padding: 5px 13px;
+        border: 1px solid #c5a46d55;
+        border-radius: 99px;
+        color: var(--g2);
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-size: clamp(38px, 5.6vw, 68px);
+        line-height: 1.35;
+        margin: 0 0 18px;
+        font-weight: 800;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--g2);
+      }
+      .lead {
+        color: var(--mu);
+        font-size: 16px;
+        max-width: 51ch;
+        margin: 0 0 27px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .dash {
+        border: 1px solid #ffffff20;
+        border-radius: 22px;
+        padding: 13px;
+        background: #12213ad9;
+        box-shadow: 0 30px 90px #0008;
+        transform: perspective(1000px) rotateY(3deg);
+      }
+      .dash img {
+        display: block;
+        width: 100%;
+        border-radius: 12px;
+      }
+      .dash-label {
+        display: flex;
+        justify-content: space-between;
+        color: var(--mu);
+        font-size: 12px;
+        padding: 10px 4px 0;
+      }
+      .float {
+        animation: float 5s ease-in-out infinite;
+      }
+      @keyframes float {
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      section {
+        padding: 88px 0;
+        position: relative;
+      }
+      .tint {
+        background: linear-gradient(180deg, #ffffff03, transparent);
+      }
+      .eyebrow {
+        color: var(--g);
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .title {
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1.4;
+        margin: 0 0 12px;
+        font-weight: 800;
+      }
+      .sub {
+        color: var(--mu);
+        max-width: 65ch;
+        margin: 0 0 35px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .card {
+        border: 1px solid var(--ln);
+        border-radius: 17px;
+        padding: 20px;
+        background: linear-gradient(145deg, #ffffff0b, #ffffff03);
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      .card:hover,
+      .card.active {
+        border-color: #c5a46d99;
+        transform: translateY(-4px);
+        box-shadow:
+          0 15px 40px #0004,
+          0 0 28px #c5a46d12;
+      }
+      .icon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 13px;
+        background: #c5a46d18;
+        color: var(--g2);
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .card h3 {
+        font-size: 15px;
+        margin: 0 0 7px;
+      }
+      .card p {
+        font-size: 12px;
+        line-height: 1.8;
+        color: var(--mu);
+        margin: 0 0 14px;
+        min-height: 43px;
+      }
+      .card button {
+        border: 0;
+        background: none;
+        color: var(--g2);
+        font-size: 12px;
+        padding: 0;
+        cursor: pointer;
+      }
+      .detail {
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 35px;
+        border: 1px solid var(--ln);
+        border-radius: 22px;
+        background: #ffffff06;
+        padding: 22px;
+      }
+      .detail img {
+        width: 100%;
+        display: block;
+        border-radius: 14px;
+        max-height: 355px;
+        object-fit: cover;
+        object-position: top;
+      }
+      .detail h3 {
+        font-size: 25px;
+        margin: 0 0 8px;
+      }
+      .detail p {
+        color: var(--mu);
+        margin: 0 0 12px;
+      }
+      .detail ul {
+        padding-right: 19px;
+        color: #d6dceb;
+        font-size: 13px;
+      }
+      .detail li {
+        padding: 3px 0;
+      }
+      .benefit {
+        color: var(--g2);
+        font-size: 12px;
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        position: relative;
+      }
+      .step {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 22px 12px;
+        border: 1px solid var(--ln);
+        background: var(--n2);
+        border-radius: 17px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .step:hover,
+      .step.sel {
+        border-color: var(--g);
+        box-shadow: 0 0 25px #c5a46d22;
+      }
+      .step b {
+        display: block;
+        color: var(--g2);
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .step span {
+        font-size: 12px;
+      }
+      .flow-note {
+        margin-top: 18px;
+        min-height: 48px;
+        color: var(--mu);
+        font-size: 13px;
+      }
+      .manage {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .manage div {
+        padding: 18px;
+        border: 1px solid var(--ln);
+        border-radius: 14px;
+        background: #ffffff05;
+        color: #dce2ed;
+        font-size: 13px;
+      }
+      .manage span {
+        color: var(--g);
+        margin-left: 8px;
+      }
+      .security {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        align-items: center;
+        padding: 26px;
+        border: 1px solid var(--ln);
+        border-radius: 22px;
+        background:
+          radial-gradient(ellipse at 15% 50%, #c5a46d12, transparent 65%),
+          #ffffff05;
+      }
+      .checks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .checks div {
+        border: 1px solid var(--ln);
+        border-radius: 12px;
+        padding: 12px;
+        color: #dfe5ee;
+        font-size: 12px;
+      }
+      .checks i {
+        color: var(--g);
+        font-style: normal;
+        margin-left: 7px;
+      }
+      footer {
+        border-top: 1px solid var(--ln);
+        padding: 24px 0;
+        color: var(--mu);
+        font-size: 12px;
+      }
+      .foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.65s,
+          transform 0.65s;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      :focus-visible {
+        outline: 2px solid var(--g);
+        outline-offset: 3px;
+        border-radius: 8px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero-grid {
+          gap: 25px;
+        }
+        .links {
+          gap: 14px;
+        }
+        .manage {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 680px) {
+        .wrap {
+          width: min(100% - 28px, 540px);
+        }
+        nav {
+          height: 66px;
+        }
+        .links {
+          display: none;
+        }
+        .hero {
+          padding: 55px 0 65px;
+        }
+        .hero-grid,
+        .detail,
+        .security {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 42px;
+        }
+        .dash {
+          transform: none;
+        }
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+        .card {
+          padding: 15px;
+        }
+        .flow {
+          grid-template-columns: 1fr;
+          gap: 9px;
+        }
+        .step {
+          display: flex;
+          align-items: center;
+          text-align: right;
+          gap: 14px;
+          padding: 12px;
+        }
+        .step b {
+          margin: 0;
+        }
+        .step:not(:last-child):after {
+          content: "↓";
+          position: absolute;
+          bottom: -21px;
+          right: 50%;
+          color: var(--g);
+          z-index: 3;
+        }
+        .checks {
+          grid-template-columns: 1fr;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .foot {
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      /* Match the shared site navigation used on the home page. */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid transparent;
+        transition:
+          background 0.35s,
+          border-color 0.35s,
+          box-shadow 0.35s;
+      }
+      header.sc,
+      header.op {
+        background: #0b1526e6;
+        backdrop-filter: blur(16px);
+        border-color: var(--ln);
+        box-shadow: 0 10px 40px #0007;
+      }
+      .nv {
+        width: min(1220px, calc(100% - 40px));
+        height: 78px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .lk {
+        display: flex;
+        gap: 26px;
+        font-size: 14px;
+        color: var(--mu);
+      }
+      .lk a {
+        position: relative;
+        transition: color 0.25s;
+      }
+      .lk a:hover {
+        color: var(--g2);
+      }
+      .lk a.active {
+        color: var(--g2);
+      }
+      .ac {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .bo {
+        background: transparent;
+        color: var(--g2);
+      }
+      .bg {
+        background: linear-gradient(120deg, var(--g2), var(--g));
+        color: var(--n1);
+      }
+      .mb {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--ln);
+        background: none;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      @media (max-width: 760px) {
+        .nv {
+          width: calc(100% - 28px);
+        }
+        .lk {
+          display: none;
+        }
+        header.op .lk {
+          display: flex;
+          position: absolute;
+          top: calc(100% - 1px);
+          right: 0;
+          left: 0;
+          flex-direction: column;
+          gap: 0;
+          padding: 8px 20px 18px;
+          background: #0b1526f5;
+          border-bottom: 1px solid var(--ln);
+          box-shadow: 0 18px 30px #0006;
+        }
+        .lk a {
+          padding: 10px;
+        }
+        .ac > .btn {
+          display: none;
+        }
+        .mb {
+          display: block;
+        }
+      }
+      @media (max-width: 680px) {
+        .nv {
+          height: 78px;
+        }
+      }
+
+      /* ===== Motion + layout upgrade ===== */
+      #bar {
+        position: fixed;
+        inset: 0 0 auto;
+        height: 3px;
+        z-index: 60;
+        background: linear-gradient(270deg, var(--g2), var(--g), #6f9bff);
+        transform-origin: right;
+        transform: scaleX(0);
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--g);
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(64px);
+        pointer-events: none;
+        animation: orb 9s ease-in-out infinite;
+      }
+      .o1 {
+        width: 300px;
+        height: 300px;
+        background: #c5a46d40;
+        top: 6%;
+        right: 3%;
+      }
+      .o2 {
+        width: 380px;
+        height: 380px;
+        background: #2b4f8a66;
+        bottom: -10%;
+        left: 4%;
+        animation-delay: -4s;
+      }
+      @keyframes orb {
+        0%,
+        100% {
+          transform: translateY(-34px) scale(1);
+        }
+        50% {
+          transform: translateY(44px) scale(1.18);
+        }
+      }
+      .w {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: bottom;
+        padding: 0 0.05em 0.12em;
+      }
+      .w i {
+        display: inline-block;
+        font-style: normal;
+        transform: translateY(115%);
+        animation: up 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        animation-delay: calc(0.15s + var(--k) * 0.12s);
+      }
+      .hero h1 em .w i {
+        background: linear-gradient(
+          90deg,
+          var(--g),
+          var(--g2),
+          #fff,
+          var(--g2),
+          var(--g)
+        );
+        background-size: 250% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation-name: up, sh;
+        animation-duration: 0.9s, 5s;
+        animation-delay: calc(0.15s + var(--k) * 0.12s), 0s;
+        animation-iteration-count: 1, infinite;
+        animation-fill-mode: forwards, none;
+        animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1), linear;
+      }
+      @keyframes up {
+        to {
+          transform: none;
+        }
+      }
+      @keyframes sh {
+        to {
+          background-position: -250% 0;
+        }
+      }
+      @keyframes fd {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+      }
+      .hero .badge {
+        animation: fd 0.8s 0.05s backwards;
+      }
+      .hero .lead {
+        animation: fd 0.8s 0.75s backwards;
+      }
+      .hero .actions {
+        animation: fd 0.8s 0.95s backwards;
+      }
+      .dash {
+        position: relative;
+        transform: perspective(1000px) rotateY(var(--ry, 3deg))
+          rotateX(var(--rx, 0deg));
+        transition: transform 0.25s;
+      }
+      .dash.float {
+        animation:
+          dashin 1.2s 0.3s cubic-bezier(0.2, 0.9, 0.2, 1) backwards,
+          float 5s 1.5s ease-in-out infinite;
+      }
+      @keyframes dashin {
+        from {
+          opacity: 0;
+          translate: 0 90px;
+          scale: 0.9;
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          translate: 0 0;
+        }
+        50% {
+          translate: 0 -16px;
+        }
+      }
+      .chip {
+        position: absolute;
+        padding: 7px 14px;
+        border: 1px solid #c5a46d66;
+        border-radius: 99px;
+        background: #0b1526ee;
+        color: var(--g2);
+        font-size: 12px;
+        font-weight: 700;
+        box-shadow: 0 10px 30px #0006;
+        animation: bob 3.6s ease-in-out infinite;
+      }
+      .c1 {
+        top: -16px;
+        right: 24px;
+      }
+      .c2 {
+        top: 42%;
+        left: -14px;
+        animation-delay: -1.2s;
+        animation-direction: reverse;
+      }
+      .c3 {
+        bottom: 36px;
+        right: -10px;
+        animation-delay: -2.4s;
+      }
+      @keyframes bob {
+        0%,
+        100% {
+          translate: 0 -9px;
+        }
+        50% {
+          translate: 0 9px;
+        }
+      }
+      @keyframes bob2 {
+        0%,
+        100% {
+          translate: 0 -6px;
+        }
+        50% {
+          translate: 0 6px;
+        }
+      }
+      .gold {
+        position: relative;
+        overflow: hidden;
+      }
+      .gold:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        left: -60%;
+        background: linear-gradient(100deg, transparent, #fff8, transparent);
+        transform: skewX(-20deg);
+        animation: sheen 3.6s infinite;
+      }
+      @keyframes sheen {
+        60%,
+        100% {
+          left: 140%;
+        }
+      }
+      .pulse {
+        animation: ring 2.2s infinite;
+      }
+      @keyframes ring {
+        0% {
+          box-shadow: 0 0 0 0 #c5a46d99;
+        }
+        100% {
+          box-shadow: 0 0 0 24px #c5a46d00;
+        }
+      }
+      .tk {
+        overflow: hidden;
+        direction: ltr;
+        border-block: 1px solid var(--ln);
+        background: #ffffff05;
+        padding: 15px 0;
+      }
+      .tk > div {
+        display: flex;
+        width: max-content;
+        animation: mq 42s linear infinite;
+      }
+      .tk:hover > div {
+        animation-play-state: paused;
+      }
+      .tk span {
+        white-space: nowrap;
+        padding: 0 22px;
+        color: var(--mu);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 44px;
+      }
+      .tk span:after {
+        content: "◆";
+        color: var(--g);
+        font-size: 9px;
+      }
+      @keyframes mq {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+        overflow-x: auto;
+        padding: 6px 2px 10px;
+        scrollbar-width: none;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab {
+        flex: none;
+        padding: 9px 18px;
+        border: 1px solid var(--ln);
+        border-radius: 99px;
+        background: none;
+        cursor: pointer;
+        color: var(--mu);
+        font-size: 13px;
+        transition: 0.3s;
+      }
+      .tab b {
+        font-weight: 500;
+        opacity: 0.7;
+        margin-right: 8px;
+      }
+      .tab:hover {
+        border-color: var(--g);
+        color: var(--g2);
+      }
+      .tab.on {
+        background: linear-gradient(120deg, var(--g2), var(--g));
+        color: var(--n1);
+        border-color: transparent;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 26px #c5a46d40;
+      }
+      .card {
+        position: relative;
+        overflow: hidden;
+      }
+      .card[hidden] {
+        display: none;
+      }
+      .card.reveal {
+        opacity: 0;
+        transform: none;
+        transition: none;
+      }
+      .card.reveal.in {
+        opacity: 1;
+        animation: rise 0.85s cubic-bezier(0.2, 0.9, 0.25, 1.15) backwards;
+        animation-delay: var(--d, 0ms);
+        transition:
+          transform 0.3s,
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+      .card.reveal.in:nth-child(even) {
+        animation-name: drop;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(64px) rotate(2deg) scale(0.92);
+        }
+      }
+      @keyframes drop {
+        from {
+          opacity: 0;
+          transform: translateY(-64px) rotate(-2deg) scale(0.92);
+        }
+      }
+      .card.reveal.in:hover,
+      .card.reveal.in.active {
+        transform: translateY(-8px);
+      }
+      .card.active {
+        border-color: var(--g);
+        box-shadow: 0 18px 44px #c5a46d26;
+      }
+      .card:before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--g), transparent);
+        transform: scaleX(0);
+        transition: transform 0.4s;
+      }
+      .card:hover:before,
+      .card.active:before {
+        transform: scaleX(1);
+      }
+      .card .icon {
+        transition: 0.4s;
+      }
+      .card:hover .icon,
+      .card.active .icon {
+        transform: translateY(-4px) rotate(-8deg) scale(1.12);
+        background: var(--g);
+        color: var(--n1);
+      }
+      .card button {
+        transition: transform 0.3s;
+      }
+      .card:hover button {
+        transform: translateX(-7px);
+      }
+      .cta-card {
+        grid-column: span var(--sp, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 4px;
+        cursor: default;
+        background: linear-gradient(120deg, #c5a46d22, #2b4f8a33);
+        border-color: #c5a46d66;
+      }
+      .cta-card h3 {
+        font-size: 18px;
+      }
+      .cta-card p {
+        min-height: 0;
+      }
+      .detail {
+        overflow: hidden;
+      }
+      .detail > div:first-child {
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid var(--ln);
+      }
+      .detail img {
+        border-radius: 0;
+      }
+      .sw > div:first-child {
+        animation: sr 0.7s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .sw > div:last-child {
+        animation: sl 0.7s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .sw img {
+        animation: zm 1.3s ease-out;
+      }
+      .sw h3 {
+        animation: fd 0.6s 0.15s backwards;
+      }
+      .sw p {
+        animation: fd 0.6s 0.25s backwards;
+      }
+      .sw li {
+        animation: li 0.5s backwards;
+        animation-delay: calc(0.3s + var(--k) * 0.08s);
+      }
+      .sw .benefit {
+        animation: fd 0.6s 0.8s backwards;
+      }
+      @keyframes sr {
+        from {
+          opacity: 0;
+          transform: translateX(70px);
+        }
+      }
+      @keyframes sl {
+        from {
+          opacity: 0;
+          transform: translateX(-70px);
+        }
+      }
+      @keyframes zm {
+        from {
+          transform: scale(1.15);
+        }
+      }
+      @keyframes li {
+        from {
+          opacity: 0;
+          transform: translateX(-22px);
+        }
+      }
+      .detail li::marker {
+        color: var(--g);
+      }
+      .benefit {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 99px;
+        background: #c5a46d18;
+      }
+      .flow:before,
+      .flow:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        left: 10%;
+        height: 2px;
+        margin-top: -1px;
+      }
+      .flow:before {
+        background: var(--ln);
+      }
+      .flow:after {
+        background: linear-gradient(270deg, var(--g2), var(--g));
+        transform-origin: right;
+        transform: scaleX(var(--p, 0));
+        transition: transform 0.8s cubic-bezier(0.3, 0.9, 0.3, 1);
+        box-shadow: 0 0 14px var(--g);
+      }
+      .step {
+        transition:
+          transform 0.4s,
+          border-color 0.4s,
+          background 0.4s,
+          box-shadow 0.4s;
+      }
+      .step.done {
+        border-color: #c5a46d66;
+      }
+      .step.sel {
+        transform: translateY(-10px) scale(1.06);
+        background: var(--n3);
+      }
+      .step.sel b {
+        animation: pop 0.5s;
+      }
+      .step.sel:before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 22px;
+        border: 1px solid var(--g);
+        animation: ping 1.8s ease-out infinite;
+      }
+      @keyframes ping {
+        to {
+          transform: scale(1.2);
+          opacity: 0;
+        }
+      }
+      @keyframes pop {
+        40% {
+          transform: scale(1.5);
+        }
+      }
+      .flow-note.sw {
+        animation: fd 0.5s;
+      }
+      .manage div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: bob2 4.5s ease-in-out infinite;
+        animation-delay: calc(var(--k, 0) * -0.6s);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .manage div:nth-child(even) {
+        animation-direction: reverse;
+      }
+      .manage div:hover {
+        border-color: var(--g);
+        background: #c5a46d14;
+      }
+      .manage span {
+        margin: 0;
+        width: 36px;
+        height: 36px;
+        flex: none;
+        display: grid;
+        place-items: center;
+        border-radius: 11px;
+        background: #c5a46d18;
+      }
+      .checks div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .checks div:hover {
+        border-color: var(--g);
+      }
+      .checks i {
+        margin: 0;
+        flex: none;
+        width: 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #c5a46d22;
+      }
+      .checks .in i {
+        animation: pin 0.6s 0.35s backwards;
+      }
+      @keyframes pin {
+        from {
+          transform: scale(0) rotate(-90deg);
+        }
+        60% {
+          transform: scale(1.3);
+        }
+      }
+      #screens {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      #screens .card {
+        padding: 12px;
+        cursor: default;
+      }
+      #screens .im {
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 12px;
+      }
+      #screens img {
+        display: block;
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.8s;
+      }
+      #screens .card:hover img {
+        transform: scale(1.12);
+      }
+      #screens h3 {
+        margin: 0;
+      }
+      @media (max-width: 680px) {
+        #screens {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        #screens img {
+          height: 110px;
+        }
+        .dash {
+          transform: none;
+        }
+        .flow:before,
+        .flow:after {
+          display: none;
+        }
+        .step.sel {
+          transform: translateX(-6px);
+        }
+        .c2 {
+          left: -6px;
+        }
+        .c3 {
+          right: -4px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation-iteration-count: 1 !important;
+        }
+        .tk > div {
+          animation: none;
+        }
+        .w i {
+          transform: none;
+        }
+        .card.reveal {
+          opacity: 1;
+        }
+      }
+
+      /* ===== v2: intro, dust, glow, confetti, fixes ===== */
+      @property --a {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+      .dash:before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 24px;
+        padding: 2px;
+        background: conic-gradient(
+          from var(--a),
+          transparent,
+          #c5a46d,
+          #fff6,
+          transparent 40%
+        );
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: spin2 5s linear infinite;
+        pointer-events: none;
+      }
+      @keyframes spin2 {
+        to {
+          --a: 360deg;
+        }
+      }
+      .wrap {
+        position: relative;
+        z-index: 1;
+      }
+      #intro {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        clip-path: inset(0);
+        background: radial-gradient(circle at 50% 50%, #1a2e4f, #0b1526 70%);
+        animation: lift 0.9s cubic-bezier(0.77, 0, 0.18, 1) 1.5s forwards;
+      }
+      #intro span {
+        font:
+          800 clamp(64px, 18vw, 170px)/1.3 Alexandria,
+          sans-serif;
+        background: linear-gradient(90deg, #c5a46d, #fff, #c5a46d) 0 0/250% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation:
+          pop2 1s cubic-bezier(0.2, 0.9, 0.2, 1) both,
+          sh 2s linear infinite;
+      }
+      #intro i {
+        position: absolute;
+        top: calc(50% + clamp(40px, 10vw, 100px));
+        height: 2px;
+        width: min(320px, 60vw);
+        background: linear-gradient(90deg, transparent, var(--g2), transparent);
+        transform: scaleX(0);
+        animation: ln 1s 0.4s forwards;
+      }
+      @keyframes pop2 {
+        from {
+          opacity: 0;
+          filter: blur(18px);
+          transform: scale(0.7);
+        }
+      }
+      @keyframes ln {
+        to {
+          transform: scaleX(1);
+        }
+      }
+      @keyframes lift {
+        to {
+          clip-path: inset(0 0 100% 0);
+          visibility: hidden;
+        }
+      }
+      .nointro #intro {
+        display: none;
+      }
+      html:not(.nointro) .hero .w i {
+        animation-delay: calc(1.7s + var(--k) * 0.12s);
+      }
+      html:not(.nointro) .hero h1 em .w i {
+        animation-delay: calc(1.7s + var(--k) * 0.12s), 0s;
+      }
+      html:not(.nointro) .badge {
+        animation-delay: 1.6s;
+      }
+      html:not(.nointro) .dash.float {
+        animation-delay: 1.9s, 3.2s;
+      }
+      html:not(.nointro) .lead {
+        animation-delay: 2.5s;
+      }
+      html:not(.nointro) .hero .actions {
+        animation-delay: 2.7s;
+      }
+      #glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 460px;
+        height: 460px;
+        margin: -230px 0 0 -230px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, #c5a46d22, transparent 65%);
+        z-index: 0;
+        will-change: transform;
+      }
+      #fx {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 90;
+      }
+      #dust {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .manage div,
+      .checks div,
+      .card {
+        --mx: 50%;
+        --my: 50%;
+      }
+      .manage div:hover,
+      .checks div:hover {
+        background-image: radial-gradient(
+          280px circle at var(--mx) var(--my),
+          #c5a46d33,
+          transparent 70%
+        );
+      }
+      .card:not(.cta-card):hover {
+        background-image:
+          radial-gradient(
+            280px circle at var(--mx) var(--my),
+            #c5a46d33,
+            transparent 70%
+          ),
+          linear-gradient(145deg, #ffffff0b, #ffffff03);
+      }
+      .title.reveal {
+        filter: blur(10px);
+        transform: translateY(40px) scale(0.96);
+        clip-path: inset(0 0 100% 0);
+        transition: 1s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .title.reveal.in {
+        filter: none;
+        transform: none;
+        clip-path: inset(-20% -5%);
+      }
+      .eyebrow.in:before {
+        animation: ln2 0.9s 0.15s backwards;
+      }
+      @keyframes ln2 {
+        from {
+          width: 0;
+        }
+      }
+      .o1 {
+        translate: 0 calc(var(--sy, 0) * -0.3px);
+      }
+      .o2 {
+        translate: 0 calc(var(--sy, 0) * 0.2px);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #intro {
+          display: none;
+        }
+        .badge,
+        .lead,
+        .hero .actions,
+        .dash.float {
+          animation: none !important;
+        }
+        .title.reveal {
+          filter: none;
+          transform: none;
+          clip-path: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="site-theme.css" />
+  </head>
+  <body>
+    <div id="intro" aria-hidden="true"><i></i><span>صحصح</span></div>
+    <div id="bar"></div>
+    <header id="hd">
+      <div class="nv">
+        <a class="logo" href="index.html#home" aria-label="صحصح - الرئيسية"
+          ><img src="sa7sa7-logo.svg" alt="صحصح"
+        /></a>
+        <nav class="lk" id="lk">
+          <a href="index.html#home">الرئيسية</a
+          ><a class="active" href="#modules" aria-current="page">المميزات</a
+          ><a href="solutions.html">الحلول</a><a href="sectors.html">القطاعات</a
+          ><a href="pricing.html">الأسعار</a><a href="docs.html">شرح</a><a href="about.html">من نحن</a
+          ><a href="contact.html">تواصل معنا</a>
+        </nav>
+        <div class="ac">
+          <a class="btn bo" href="index.html#cta">احجز عرض توضيحي</a
+          ><a class="btn bg" href="index.html#cta">ابدأ الآن</a
+          ><button class="mb" id="mb" aria-label="القائمة" type="button">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <i class="orb o1"></i><i class="orb o2"></i>
+        <div class="wrap hero-grid">
+          <div>
+          <span class="badge">◆ <span id="cnt">١٢</span> وحدة متكاملة</span>
+            <h1>
+              <span class="w"><i style="--k: 0">كل</i></span>
+              <span class="w"><i style="--k: 1">إمكانيات</i></span>
+              <span class="w"><i style="--k: 2">شغلك...</i></span>
+              <em
+                ><span class="w"><i style="--k: 3">في</i></span>
+                <span class="w"><i style="--k: 4">منظومة</i></span>
+                <span class="w"><i style="--k: 5">واحدة</i></span></em
+              >
+            </h1>
+            <p class="lead">
+              اكتشف قوة صحصح في إدارة المبيعات والمخزون والحسابات والعملاء
+              والموظفين، من خلال منظومة ذكية مترابطة تمنحك تحكماً كاملاً في كل
+              تفاصيل أعمالك.
+            </p>
+            <div class="actions">
+              <a class="btn gold" href="#modules">استكشف المميزات</a
+              ><a class="btn outline" href="index.html#cta">احجز عرض توضيحي</a>
+            </div>
+          </div>
+          <div class="dash float">
+            <img
+              src="assets/screenshots/dashboard.png"
+              alt="لوحة تحكم صحصح ERP"
+            /><span class="chip c1">المبيعات</span
+            ><span class="chip c2">المخزون</span
+            ><span class="chip c3">الخزينة</span>
+            <div class="dash-label">
+              <span>لوحة تحكم صحصح</span
+              ><span>المبيعات · المخزون · التقارير</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="tk" aria-hidden="true"><div id="tkt"></div></div>
+      <section id="modules" class="tint">
+        <div class="wrap">
+          <div class="eyebrow">وحدات صحصح</div>
+          <h2 class="title">كل وحدة بتعمل شغلها... وكلهم بيشتغلوا مع بعض</h2>
+          <p class="sub">
+            صحصح بتجمع عمليات شركتك كلها في مكان واحد. اختار قسم أو وحدة وشوف
+            إمكانياتها وشاشتها من جوه النظام.
+          </p>
+          <div class="tabs" id="tabs"></div>
+          <div class="grid" id="cards"></div>
+          <article
+            class="detail reveal"
+            id="detail"
+            aria-live="polite"
+          ></article>
+        </div>
+      </section>
+      <section id="workflow">
+        <div class="wrap">
+          <div class="eyebrow">ترابط الوحدات</div>
+          <h2 class="title">كل عملية بتحرك اللي بعدها</h2>
+          <p class="sub">
+            العملية الواحدة بتتسجل مرة، وأثرها بيظهر في باقي الوحدات. دوس على أي
+            خطوة.
+          </p>
+          <div class="flow" id="flow"></div>
+          <p class="flow-note" id="flow-note" aria-live="polite"></p>
+        </div>
+      </section>
+      <section class="tint">
+        <div class="wrap">
+          <div class="eyebrow">مميزات عامة</div>
+          <h2 class="title">مميزات بتشتغل مع كل الوحدات</h2>
+          <p class="sub">
+            إمكانات مشتركة في النظام كله، مش مرتبطة بوحدة واحدة.
+          </p>
+          <div class="security">
+            <div>
+              <h3>إمكانات مشتركة بين كل الوحدات</h3>
+              <p class="sub" style="margin: 10px 0 0">
+                تختلف التفاصيل المتاحة حسب الإعداد والوحدات المفعلة لحسابك.
+              </p>
+            </div>
+            <div class="checks">
+              <div><i>✓</i>نظام سحابي</div>
+              <div><i>✓</i>واجهة متوافقة مع الكمبيوتر والموبايل</div>
+              <div><i>✓</i>تنبيهات واتساب</div>
+              <div><i>✓</i>الفاتورة الإلكترونية ضمن وحدة المبيعات</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap security">
+          <div>
+            <div class="eyebrow">خطوتك القادمة</div>
+            <h2 class="title">شوف صحصح وهو بيدير شغلك</h2>
+            <p class="sub" style="margin: 0">
+              احجز عرضاً توضيحياً وتعرّف على الوحدات المناسبة لنشاطك.
+            </p>
+          </div>
+          <a class="btn gold pulse" href="index.html#cta">احجز عرض توضيحي</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <a class="logo" href="index.html"
+          ><img src="sa7sa7-logo.svg" alt="صحصح" width="120" /></a
+        ><span>© ٢٠٢٦ صحصح — منظومة حساباتي ERP</span
+        ><a href="index.html">العودة للرئيسية</a>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const R = matchMedia("(prefers-reduced-motion: reduce)").matches,
+          $ = (s) => document.querySelector(s),
+          $$ = (s) => [...document.querySelectorAll(s)];
+        const hd = $("#hd"),
+          mb = $("#mb"),
+          bar = $("#bar"),
+          N = (n) => n.toLocaleString("ar-EG", { minimumIntegerDigits: 2 });
+        mb.onclick = () => hd.classList.toggle("op");
+        $$("#lk a").forEach((a) =>
+          a.addEventListener("click", () => hd.classList.remove("op")),
+        );
+        const sc = () => {
+          hd.classList.toggle("sc", scrollY > 20);
+          bar.style.transform =
+            "scaleX(" +
+            Math.min(
+              1,
+              scrollY /
+                Math.max(
+                  1,
+                  document.documentElement.scrollHeight - innerHeight,
+                ),
+            ) +
+            ")";
+        };
+        addEventListener("scroll", sc, { passive: true });
+        sc();
+        const cats = [
+          ["all", "الكل"],
+          ["sales", "المبيعات والعملاء"],
+          ["stock", "المخزون والمشتريات"],
+          ["fin", "المالية والتقارير"],
+          ["ops", "الإدارة والتحكم"],
+        ];
+        const units = [
+          [
+            "إدارة المبيعات",
+            "من عرض السعر للفاتورة والتحصيل في دورة واحدة مرتبطة بالمخزون والخزينة.",
+            "▤",
+            "sales.png",
+            [
+              "عروض أسعار وأوامر بيع",
+              "فواتير بيع وتحصيل",
+              "سداد نقدي أو بنكي أو آجل",
+              "ربط الفواتير بحساب العميل",
+            ],
+            "دورة بيع منظمة ومستحقات عملاء واضحة.",
+            "sales",
+          ],
+          [
+            "نقطة البيع POS",
+            "شاشة كاشير سريعة بتدعم الباركود والورديات.",
+            "▣",
+            "pos.png",
+            [
+              "مسح الأصناف بالباركود",
+              "سداد مجزأ",
+              "تعليق واسترجاع الفواتير",
+              "متابعة ورديات الكاشير",
+            ],
+            "تسجيل أسرع للبيع ومراجعة أسهل للوردية.",
+            "sales",
+          ],
+          [
+            "العملاء وCRM",
+            "ملف موحد يجمع بيانات العميل وسجل تواصله ومعاملاته التجارية.",
+            "◎",
+            "customers.png",
+            [
+              "سجل التواصل والمعاملات",
+              "متابعة المديونيات",
+              "تاريخ المشتريات والدفعات",
+              "كشوف الحساب",
+            ],
+            "متابعة التعاملات والتحصيل من مكان واحد.",
+            "sales",
+          ],
+          [
+            "إدارة المخزون",
+            "تابع أرصدة الأصناف وحركتها بين المخازن والفروع.",
+            "▦",
+            "inventory.png",
+            [
+              "إدارة عدة مخازن",
+              "جرد وتسويات بالباركود",
+              "تنبيهات حد إعادة الطلب",
+              "تحويلات بين الفروع",
+            ],
+            "رؤية أوضح للأرصدة وحركة البضائع.",
+            "stock",
+          ],
+          [
+            "إدارة المشتريات",
+            "سجّل طلبات الشراء وفواتير الموردين واستلام البضاعة.",
+            "⇧",
+            "inventory.png",
+            [
+              "طلبات شراء",
+              "فواتير الموردين",
+              "متابعة الاستلام",
+              "متابعة مستحقات الموردين",
+            ],
+            "توريد مربوط بالمخزون وحسابات الموردين.",
+            "stock",
+          ],
+          [
+            "إدارة الموردين",
+            "بيانات الموردين وفواتيرهم ومواعيد الاستحقاق.",
+            "◇",
+            "customers.png",
+            [
+              "ملفات الموردين",
+              "أوامر الشراء والاستلام",
+              "مستحقات الموردين",
+              "حركة التعاملات",
+            ],
+            "دورة شراء ومدفوعات منظمة.",
+            "stock",
+          ],
+          [
+            "الحسابات والخزينة",
+            "أرصدة الخزائن والحسابات البنكية والمصروفات.",
+            "◈",
+            "finance.png",
+            [
+              "خزائن رئيسية وفرعية",
+              "حسابات بنكية وشيكات",
+              "تسجيل المصروفات",
+              "مطابقة المبيعات والمبالغ المستلمة",
+            ],
+            "متابعة أوضح للسيولة والحركة المالية.",
+            "fin",
+          ],
+          [
+            "المحاسبة",
+            "قيود وتقارير مالية مرتبطة بعمليات النظام.",
+            "▥",
+            "finance.png",
+            [
+              "قيود محاسبية مرتبطة بالعمليات",
+              "متابعة الإيرادات والمصروفات",
+              "قائمة دخل وميزان مراجعة",
+              "تقارير ضريبية",
+            ],
+            "بيانات مالية مجمعة وسهلة المراجعة.",
+            "fin",
+          ],
+          [
+            "التقارير والتحليلات",
+            "لوحات وتقارير للمبيعات والمخزون والنتائج المالية.",
+            "◐",
+            "reports.png",
+            [
+              "تقارير الأرباح والخسائر",
+              "تحليل الأصناف",
+              "مؤشرات أداء KPI",
+              "تصدير Excel وPDF",
+            ],
+            "بيانات عملياتك في خدمة مراجعة الأداء.",
+            "fin",
+          ],
+          [
+            "الفروع والمخازن",
+            "أدر الفروع والمستودعات من لوحة مركزية.",
+            "⌖",
+            "branches.png",
+            [
+              "بيانات مستقلة أو مجمعة",
+              "تحويلات بضائع",
+              "متابعة أداء الفروع",
+              "تنظيم العمليات حسب الفرع",
+            ],
+            "متابعة الفروع وحركة البضائع بينها.",
+            "ops",
+          ],
+          [
+            "الموارد البشرية",
+            "بيانات فريق العمل والحضور والرواتب.",
+            "♙",
+            "staff.png",
+            [
+              "بيانات الموظفين",
+              "كشوف الحضور",
+              "مسيرات الرواتب والمكافآت",
+              "الإجازات",
+            ],
+            "تنظيم بيانات الفريق ومتابعة شؤونه.",
+            "ops",
+          ],
+          [
+            "المستخدمون والصلاحيات",
+            "حدد اللي يقدر كل دور يوصله وتابع التعديلات.",
+            "⌑",
+            "staff.png",
+            [
+              "أدوار مدير النظام والفرع",
+              "صلاحيات الكاشير والمحاسب",
+              "عهدة وخزينة ومخزن لكل موظف",
+              "سجل مراقبة الإضافات والتعديلات",
+            ],
+            "توزيع الوصول ومراجعة سجل العمليات.",
+            "ops",
+          ],
+        ];
+        $("#tkt").innerHTML = units
+          .map((u) => "<span>" + u[0] + "</span>")
+          .join("")
+          .repeat(2);
+        const cards = $("#cards"),
+          detail = $("#detail"),
+          tabs = $("#tabs");
+        function show(i, quiet) {
+          const u = units[i],
+            cn = cats.find((c) => c[0] === u[6])[1];
+          els.forEach((c, n) => c.classList.toggle("active", n === i));
+          detail.innerHTML =
+            '<div><img src="assets/screenshots/' +
+            u[3] +
+            '" alt="واجهة ' +
+            u[0] +
+            ' في صحصح"></div><div><div class="eyebrow">' +
+            cn +
+            " · الوحدة " +
+            N(i + 1) +
+            " من " +
+            N(units.length) +
+            "</div><h3>" +
+            u[0] +
+            "</h3><p>" +
+            u[1] +
+            "</p><ul>" +
+            u[4]
+              .map((x, k) => '<li style="--k:' + k + '">' + x + "</li>")
+              .join("") +
+            '</ul><div class="benefit">' +
+            u[5] +
+            "</div></div>";
+          detail.classList.remove("sw");
+          if (!quiet) {
+            void detail.offsetWidth;
+            detail.classList.add("sw");
+          }
+        }
+        const els = units.map((u, i) => {
+          const a = document.createElement("article");
+          a.className = "card reveal";
+          a.dataset.c = u[6];
+          a.tabIndex = 0;
+          a.setAttribute("role", "button");
+          a.setAttribute("aria-label", "اكتشف تفاصيل " + u[0]);
+          a.innerHTML =
+            '<div class="icon">' +
+            u[2] +
+            "</div><h3>" +
+            u[0] +
+            "</h3><p>" +
+            u[1] +
+            '</p><button type="button" tabindex="-1">اكتشف التفاصيل ←</button>';
+          const go = () => {
+            show(i);
+            if (innerWidth < 900)
+              detail.scrollIntoView({
+                behavior: R ? "auto" : "smooth",
+                block: "start",
+              });
+          };
+          a.onclick = go;
+          a.onkeydown = (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              go();
+            }
+          };
+          cards.appendChild(a);
+          return a;
+        });
+        function filt(c) {
+          $$(".tab").forEach((t) =>
+            t.classList.toggle("on", t.dataset.c === c),
+          );
+          let k = 0;
+          els.forEach((e) => {
+            const m = c === "all" || e.dataset.c === c;
+            e.hidden = !m;
+            if (m) {
+              e.classList.remove("in");
+              void e.offsetWidth;
+              e.style.setProperty("--d", k++ * 70 + "ms");
+              e.classList.add("in");
+            }
+          });
+          const f = els.findIndex((e) => !e.hidden);
+          if (f > -1) show(f);
+        }
+        cats.forEach((c) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "tab" + (c[0] === "all" ? " on" : "");
+          b.dataset.c = c[0];
+          b.innerHTML =
+            c[1] +
+            "<b>" +
+            (c[0] === "all"
+              ? units.length
+              : units.filter((u) => u[6] === c[0]).length
+            ).toLocaleString("ar-EG") +
+            "</b>";
+          b.onclick = () => filt(c[0]);
+          tabs.appendChild(b);
+        });
+        show(0, true);
+        const steps = [
+          ["بيع", "تسجيل الفاتورة وربطها بالعميل."],
+          ["مخزون", "تحديث رصيد الأصناف بعد إتمام البيع."],
+          ["خزينة", "تسجيل أثر التحصيل ضمن حركة المبيعات والمبالغ المستلمة."],
+          ["عميل", "ربط الفاتورة بحساب العميل وسجل التعاملات."],
+          ["تقارير", "تحديث مؤشرات وتقارير العمليات."],
+        ];
+        const flow = $("#flow"),
+          note = $("#flow-note");
+        let si = 0,
+          hold = 0;
+        const bs = steps.map((s, i) => {
+          const b = document.createElement("button");
+          b.className = "step";
+          b.innerHTML = "<b>0" + (i + 1) + "</b><span>" + s[0] + "</span>";
+          b.onclick = () => {
+            hold = Date.now() + 12000;
+            pick(i);
+          };
+          flow.appendChild(b);
+          return b;
+        });
+        function pick(i) {
+          si = i;
+          bs.forEach((b, n) => {
+            b.classList.toggle("sel", n === i);
+            b.classList.toggle("done", n < i);
+          });
+          flow.style.setProperty("--p", i / (steps.length - 1));
+          note.textContent = steps[i][1];
+          note.classList.remove("sw");
+          void note.offsetWidth;
+          note.classList.add("sw");
+        }
+        pick(0);
+        if (!R) {
+          let vis = false;
+          new IntersectionObserver((e) => {
+            vis = e[0].isIntersecting;
+          }).observe(flow);
+          setInterval(() => {
+            if (vis && Date.now() > hold) pick((si + 1) % steps.length);
+          }, 2600);
+        }
+        $$(".manage div,.checks div").forEach((e, i) => {
+          e.classList.add("reveal");
+          e.style.setProperty("--k", i % 8);
+        });
+        $$("section .eyebrow,section .title,section .sub").forEach((e) =>
+          e.classList.add("reveal"),
+        );
+        const all = $$(".reveal");
+        if (!R && "IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (es) =>
+              es.forEach((e) => {
+                if (e.isIntersecting) {
+                  const t = e.target,
+                    d = ([...t.parentNode.children].indexOf(t) % 4) * 90;
+                  t.style.setProperty("--d", d + "ms");
+                  if (!t.classList.contains("card")) {
+                    t.style.transitionDelay = d + "ms";
+                    setTimeout(() => (t.style.transitionDelay = ""), 1200);
+                  }
+                  t.classList.add("in");
+                  io.unobserve(t);
+                }
+              }),
+            { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+          );
+          all.forEach((x) => io.observe(x));
+        } else all.forEach((x) => x.classList.add("in"));
+        const cn = $("#cnt");
+        if (cn && !R) {
+          const t0 =
+            performance.now() +
+            (document.documentElement.classList.contains("nointro") ? 0 : 1700);
+          (function f(n) {
+            const p = Math.max(0, Math.min(1, (n - t0) / 1400));
+            cn.textContent = Math.round(
+              units.length * (1 - Math.pow(1 - p, 3)),
+            ).toLocaleString("ar-EG");
+            if (p < 1) requestAnimationFrame(f);
+          })(t0);
+        }
+        const d = $(".dash");
+        if (d && !R && matchMedia("(hover:hover)").matches) {
+          addEventListener(
+            "mousemove",
+            (e) => {
+              d.style.setProperty(
+                "--ry",
+                3 - (e.clientX / innerWidth - 0.5) * 12 + "deg",
+              );
+              d.style.setProperty(
+                "--rx",
+                (e.clientY / innerHeight - 0.5) * 8 + "deg",
+              );
+            },
+            { passive: true },
+          );
+        }
+
+        /* ===== v2 ===== */
+        (function () {
+          setTimeout(() => {
+            const n = $("#intro");
+            n && n.remove();
+          }, 2600);
+          if (R) return;
+          const hero = $(".hero");
+          addEventListener(
+            "scroll",
+            () => hero.style.setProperty("--sy", Math.min(scrollY, 900)),
+            { passive: true },
+          );
+          /* gold dust */
+          const c = document.createElement("canvas");
+          c.id = "dust";
+          hero.prepend(c);
+          const x = c.getContext("2d");
+          let W,
+            H,
+            P = [],
+            m = { x: -999, y: -999 },
+            on = true;
+          const fit = () => {
+            const r = hero.getBoundingClientRect(),
+              d = devicePixelRatio || 1;
+            W = r.width;
+            H = r.height;
+            c.width = W * d;
+            c.height = H * d;
+            x.setTransform(d, 0, 0, d, 0, 0);
+            P = Array.from({ length: Math.round(W / 22) }, () => ({
+              x: Math.random() * W,
+              y: Math.random() * H,
+              r: Math.random() * 1.8 + 0.6,
+              v: Math.random() * 0.35 + 0.1,
+              p: Math.random() * 6,
+            }));
+          };
+          fit();
+          addEventListener("resize", fit);
+          hero.addEventListener("pointermove", (e) => {
+            const r = hero.getBoundingClientRect();
+            m.x = e.clientX - r.left;
+            m.y = e.clientY - r.top;
+          });
+          hero.addEventListener("pointerleave", () => (m.x = -999));
+          new IntersectionObserver((e) => (on = e[0].isIntersecting)).observe(
+            hero,
+          );
+          (function f(t) {
+            requestAnimationFrame(f);
+            if (!on) return;
+            x.clearRect(0, 0, W, H);
+            P.forEach((a, i) => {
+              a.y -= a.v;
+              a.x += Math.sin(t / 1500 + a.p) * 0.25;
+              const dx = a.x - m.x,
+                dy = a.y - m.y,
+                d = Math.hypot(dx, dy) || 1;
+              if (d < 120) {
+                a.x += (dx / d) * (120 - d) * 0.03;
+                a.y += (dy / d) * (120 - d) * 0.03;
+              }
+              if (a.y < -5) {
+                a.y = H + 5;
+                a.x = Math.random() * W;
+              }
+              x.globalAlpha = 0.35 + 0.5 * Math.sin(t / 700 + a.p) ** 2;
+              x.fillStyle = "#e8d3a2";
+              x.beginPath();
+              x.arc(a.x, a.y, a.r, 0, 7);
+              x.fill();
+              for (let j = i + 1; j < P.length; j++) {
+                const b = P[j],
+                  q = Math.hypot(a.x - b.x, a.y - b.y);
+                if (q < 90) {
+                  x.globalAlpha = (1 - q / 90) * 0.25;
+                  x.strokeStyle = "#c5a46d";
+                  x.beginPath();
+                  x.moveTo(a.x, a.y);
+                  x.lineTo(b.x, b.y);
+                  x.stroke();
+                }
+              }
+            });
+          })(0);
+          /* confetti */
+          const fx = document.createElement("canvas");
+          fx.id = "fx";
+          document.body.append(fx);
+          const q = fx.getContext("2d"),
+            col = ["#c5a46d", "#e8d3a2", "#ffffff", "#6aa6ff", "#ffd36b"];
+          let C = [],
+            run = 0;
+          const rs = () => {
+            fx.width = innerWidth;
+            fx.height = innerHeight;
+          };
+          rs();
+          addEventListener("resize", rs);
+          function loop() {
+            run = 1;
+            q.clearRect(0, 0, fx.width, fx.height);
+            C = C.filter((p) => p.l > 0);
+            C.forEach((p) => {
+              p.vy += 0.28;
+              p.vx *= 0.985;
+              p.x += p.vx;
+              p.y += p.vy;
+              p.r += p.vr;
+              p.l -= 0.011;
+              q.save();
+              q.globalAlpha = Math.max(p.l, 0);
+              q.translate(p.x, p.y);
+              q.rotate(p.r);
+              q.fillStyle = p.c;
+              q.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+              q.restore();
+            });
+            if (C.length) requestAnimationFrame(loop);
+            else {
+              run = 0;
+              q.clearRect(0, 0, fx.width, fx.height);
+            }
+          }
+          function burst(px, py, n) {
+            for (let i = 0; i < n; i++) {
+              const a = Math.random() * 6.283,
+                s = Math.random() * 9 + 3;
+              C.push({
+                x: px,
+                y: py,
+                vx: Math.cos(a) * s,
+                vy: Math.sin(a) * s - 5,
+                w: Math.random() * 7 + 4,
+                h: Math.random() * 4 + 3,
+                r: Math.random() * 6,
+                vr: Math.random() * 0.4 - 0.2,
+                c: col[i % 5],
+                l: 1,
+              });
+            }
+            run || loop();
+          }
+          addEventListener("click", (e) => {
+            const t = e.target.closest(".card,.tab,.step,.btn");
+            if (!t) return;
+            const r = t.getBoundingClientRect();
+            burst(
+              e.detail ? e.clientX : r.left + r.width / 2,
+              e.detail ? e.clientY : r.top + r.height / 2,
+              t.matches(".btn") ? 30 : 20,
+            );
+          });
+          new IntersectionObserver(
+            (es, o) => {
+              if (es[0].isIntersecting) {
+                [0.25, 0.5, 0.75].forEach((f, i) =>
+                  setTimeout(
+                    () => burst(innerWidth * f, innerHeight * 0.55, 40),
+                    i * 220,
+                  ),
+                );
+                o.disconnect();
+              }
+            },
+            { threshold: 0.6 },
+          ).observe($$("main .btn.pulse").pop());
+          /* glow, card spotlight, magnetic buttons */
+          if (matchMedia("(hover:hover)").matches) {
+            const gl = document.createElement("div");
+            gl.id = "glow";
+            document.body.append(gl);
+            addEventListener(
+              "pointermove",
+              (e) => {
+                gl.style.transform =
+                  "translate3d(" + e.clientX + "px," + e.clientY + "px,0)";
+                const g = e.target.closest(
+                  ".manage div,.checks div,.card:not(.cta-card)",
+                );
+                if (g) {
+                  const r = g.getBoundingClientRect();
+                  g.style.setProperty("--mx", e.clientX - r.left + "px");
+                  g.style.setProperty("--my", e.clientY - r.top + "px");
+                }
+                const b = e.target.closest(".btn");
+                if (b) {
+                  const r = b.getBoundingClientRect();
+                  b.style.translate =
+                    (e.clientX - r.left - r.width / 2) * 0.25 +
+                    "px " +
+                    (e.clientY - r.top - r.height / 2) * 0.35 +
+                    "px";
+                }
+              },
+              { passive: true },
+            );
+            addEventListener("pointerout", (e) => {
+              const b = e.target.closest(".btn");
+              if (b) b.style.translate = "";
+            });
+          }
+        })();
+      })();
+    </script>
+    <script src="site-theme.js"></script>
+  </body>
+</html>

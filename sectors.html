@@ -1,0 +1,2177 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b1526" />
+    <meta
+      name="description"
+      content="حلول صحصح ERP لقطاعات التجزئة والسوبر ماركت والمطاعم والتجارة متعددة الفروع."
+    />
+    <title>القطاعات — صحصح ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        sessionStorage.sa7 && document.documentElement.classList.add("nointro");
+        sessionStorage.sa7 = 1;
+      } catch (e) {}
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --n1: #0b1526;
+        --n2: #12213a;
+        --n3: #1a2e4f;
+        --g: #c5a46d;
+        --g2: #e8d3a2;
+        --tx: #eef1f8;
+        --mu: #9fadc7;
+        --ln: #ffffff1a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      body {
+        margin: 0;
+        background: var(--n1);
+        color: var(--tx);
+        font:
+          300 15px/1.9 Alexandria,
+          system-ui,
+          sans-serif;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+      }
+      .wrap {
+        width: min(1220px, calc(100% - 40px));
+        margin: auto;
+        position: relative;
+        z-index: 1;
+      }
+      #bar {
+        position: fixed;
+        inset: 0 0 auto;
+        height: 3px;
+        z-index: 60;
+        background: linear-gradient(270deg, var(--g2), var(--g), #e8d3a2);
+        transform-origin: right;
+        transform: scaleX(0);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+      }
+      header.sc,
+      header.op {
+        background: #0b1526e8;
+        backdrop-filter: blur(16px);
+        border-color: var(--ln);
+        box-shadow: 0 10px 40px #0007;
+      }
+      .nv {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .logo img {
+        width: 132px;
+        height: 46px;
+        object-fit: contain;
+      }
+      .lk {
+        display: flex;
+        gap: 26px;
+        font-size: 14px;
+        color: var(--mu);
+      }
+      .lk a {
+        transition: color 0.25s;
+      }
+      .lk a:hover,
+      .lk a.active {
+        color: var(--g2);
+      }
+      .ac {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 20px;
+        border: 1px solid var(--g);
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 13px;
+        white-space: nowrap;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+      .bg {
+        background: linear-gradient(120deg, var(--g2), var(--g));
+        color: var(--n1);
+        box-shadow: 0 12px 32px #c5a46d33;
+      }
+      .bg:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        left: -60%;
+        background: linear-gradient(100deg, transparent, #fff9, transparent);
+        transform: skewX(-20deg);
+        animation: sheen 3.6s infinite;
+      }
+      .bo {
+        color: var(--g2);
+      }
+      .pulse {
+        animation: ring 2.2s infinite;
+      }
+      @keyframes ring {
+        0% {
+          box-shadow: 0 0 0 0 #c5a46dbb;
+        }
+        100% {
+          box-shadow: 0 0 0 24px #c5a46d00;
+        }
+      }
+      @keyframes sheen {
+        60%,
+        100% {
+          left: 140%;
+        }
+      }
+      .mb {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--ln);
+        border-radius: 12px;
+        background: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      section {
+        padding: 90px 0;
+        position: relative;
+      }
+      .ey {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--g);
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .ey:before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--g);
+      }
+      .title {
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1.45;
+        margin: 0 0 12px;
+        font-weight: 800;
+      }
+      .sub {
+        color: var(--mu);
+        max-width: 66ch;
+        margin: 0 0 36px;
+      }
+      .glass {
+        border: 1px solid var(--ln);
+        border-radius: 22px;
+        background: linear-gradient(145deg, #ffffff0f, #ffffff04);
+        backdrop-filter: blur(10px);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s,
+          transform 0.7s;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      /* hero */
+      .hero {
+        overflow: hidden;
+        padding: 78px 0 100px;
+        background: linear-gradient(150deg, #0b1526, #12213a 55%, #1a2e4f);
+        background-size: 160% 160%;
+        animation: bgm 16s ease-in-out infinite;
+      }
+      @keyframes bgm {
+        50% {
+          background-position: 100% 100%;
+        }
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        pointer-events: none;
+        animation: orb 9s ease-in-out infinite;
+      }
+      .o1 {
+        width: 320px;
+        height: 320px;
+        background: #c5a46d44;
+        top: 5%;
+        right: 2%;
+      }
+      .o2 {
+        width: 400px;
+        height: 400px;
+        background: #2b4f8a44;
+        bottom: -14%;
+        left: 2%;
+        animation-delay: -4s;
+      }
+      @keyframes orb {
+        0%,
+        100% {
+          transform: translateY(-34px) scale(1);
+        }
+        50% {
+          transform: translateY(44px) scale(1.18);
+        }
+      }
+      .hg {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-flex;
+        border: 1px solid #c5a46d66;
+        border-radius: 30px;
+        padding: 5px 14px;
+        color: var(--g2);
+        font-size: 12px;
+        margin-bottom: 18px;
+        animation: fd 0.8s backwards;
+      }
+      .hero h1 {
+        font-size: clamp(34px, 4.8vw, 60px);
+        line-height: 1.45;
+        margin: 0 0 16px;
+        font-weight: 800;
+      }
+      .w {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: bottom;
+        padding: 0 0.05em 0.14em;
+      }
+      .w i {
+        display: inline-block;
+        font-style: normal;
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(80%);
+        animation: up 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        animation-delay: calc(0.15s + var(--k) * 0.1s);
+      }
+      .hero h1 em {
+        font-style: normal;
+      }
+      .hero h1 em .w i {
+        background: linear-gradient(
+            90deg,
+            #c5a46d,
+            #e8d3a2,
+            #fff,
+            #e8d3a2,
+            #c5a46d
+          )
+          0 0/250% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation:
+          up 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards,
+          sh 5s linear infinite;
+        animation-delay: calc(0.15s + var(--k) * 0.1s), 0s;
+      }
+      @keyframes up {
+        to {
+          opacity: 1;
+          filter: none;
+          transform: none;
+        }
+      }
+      @keyframes sh {
+        to {
+          background-position: -250% 0;
+        }
+      }
+      @keyframes fd {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+      }
+      .lead {
+        color: #9fadc7;
+        font-size: 16px;
+        max-width: 56ch;
+        margin: 0 0 26px;
+        animation: fd 0.8s 0.9s backwards;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        animation: fd 0.8s 1.1s backwards;
+      }
+      .art {
+        position: relative;
+        aspect-ratio: 1/0.88;
+        --px: 0;
+        --py: 0;
+      }
+      .art .core {
+        position: absolute;
+        inset: 12% 12%;
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        box-shadow:
+          0 30px 80px #0009,
+          0 0 60px #c5a46d22;
+        animation: fd 1s 0.4s backwards;
+      }
+      .art .core img {
+        width: 100%;
+        border-radius: 12px;
+        display: block;
+        max-height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .art .core:before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 24px;
+        padding: 2px;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          #c5a46d,
+          transparent 40%
+        );
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: spin 6s linear infinite;
+      }
+      @property --a {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(0);
+        }
+      }
+      .ch {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border: 1px solid #c5a46d77;
+        border-radius: 30px;
+        background: #0b1526ee;
+        color: var(--g2);
+        font-size: 12px;
+        font-weight: 700;
+        box-shadow: 0 10px 28px #0006;
+        transform: translate(
+          calc(var(--px) * var(--dp) * 1px),
+          calc(var(--py) * var(--dp) * 1px)
+        );
+        white-space: nowrap;
+      }
+      .ch b {
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .ch > span {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        animation: bob 3.8s ease-in-out infinite;
+        animation-delay: var(--dl);
+      }
+      @keyframes bob {
+        0%,
+        100% {
+          translate: 0 -9px;
+        }
+        50% {
+          translate: 0 9px;
+        }
+      }
+      .c1 {
+        top: 0;
+        right: 12%;
+        --dp: 0.9;
+        --dl: 0s;
+      }
+      .c2 {
+        top: 20%;
+        left: -2%;
+        --dp: 1.3;
+        --dl: -1s;
+      }
+      .c3 {
+        top: 56%;
+        right: -3%;
+        --dp: 1.1;
+        --dl: -2s;
+      }
+      .c4 {
+        bottom: 10%;
+        left: 0;
+        --dp: 1.4;
+        --dl: -0.5s;
+      }
+      .c5 {
+        bottom: -2%;
+        right: 26%;
+        --dp: 0.8;
+        --dl: -1.6s;
+      }
+      .c6 {
+        top: -3%;
+        left: 30%;
+        --dp: 1.2;
+        --dl: -2.6s;
+      }
+      /* tickers */
+      .tk {
+        overflow: hidden;
+        direction: ltr;
+        background: #0f1d36;
+        border-bottom: 1px solid var(--ln);
+        padding: 15px 0;
+      }
+      .tk > div {
+        display: flex;
+        width: max-content;
+        animation: mq 46s linear infinite;
+      }
+      .tk:hover > div {
+        animation-play-state: paused;
+      }
+      .tk span {
+        white-space: nowrap;
+        padding: 0 22px;
+        color: var(--mu);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 44px;
+      }
+      .tk span:after {
+        content: "◆";
+        color: var(--g);
+        font-size: 9px;
+      }
+      @keyframes mq {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      /* grid */
+      .g10 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+      }
+      .ic {
+        position: relative;
+        text-align: right;
+        padding: 22px 18px;
+        min-height: 190px;
+        cursor: pointer;
+        overflow: hidden;
+        transform: perspective(800px) rotateX(var(--rx, 0deg))
+          rotateY(var(--ry, 0deg));
+        transition:
+          transform 0.25s,
+          box-shadow 0.3s;
+      }
+      .ic.reveal {
+        opacity: 0;
+        transform: none;
+        transition: none;
+      }
+      .ic.reveal.in {
+        opacity: 1;
+        animation: rise 0.85s cubic-bezier(0.2, 0.9, 0.25, 1.15) backwards;
+        animation-delay: var(--d, 0ms);
+        transform: perspective(800px) rotateX(var(--rx, 0deg))
+          rotateY(var(--ry, 0deg));
+        transition:
+          transform 0.25s,
+          box-shadow 0.3s;
+      }
+      .ic.reveal.in:nth-child(even) {
+        animation-name: drop;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(64px) rotate(2deg) scale(0.92);
+        }
+      }
+      @keyframes drop {
+        from {
+          opacity: 0;
+          transform: translateY(-64px) rotate(-2deg) scale(0.92);
+        }
+      }
+      .ic:hover,
+      .ic.on {
+        box-shadow:
+          0 20px 50px #0008,
+          0 0 34px #c5a46d22;
+      }
+      .ic:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 22px;
+        padding: 1.5px;
+        background: linear-gradient(
+            120deg,
+            transparent,
+            #c5a46d,
+            #e8d3a2,
+            transparent
+          )
+          0 0/300% 100%;
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: 0.3s;
+        animation: bd 3s linear infinite;
+        pointer-events: none;
+      }
+      .ic:hover:after,
+      .ic.on:after {
+        opacity: 1;
+      }
+      @keyframes bd {
+        to {
+          background-position: -300% 0;
+        }
+      }
+      .ic .ico {
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        background: #c5a46d1f;
+        color: var(--g2);
+        font-size: 22px;
+        margin-bottom: 14px;
+        transition: 0.4s;
+      }
+      .ic:hover .ico,
+      .ic.on .ico {
+        transform: translateY(-4px) rotate(-10deg) scale(1.12);
+        background: var(--g2);
+        color: var(--n1);
+      }
+      .ic h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .ic p {
+        margin: 0 0 12px;
+        color: var(--mu);
+        font-size: 12px;
+        line-height: 1.8;
+      }
+      .ic small {
+        color: var(--g2);
+        font-size: 12px;
+        transition: 0.3s;
+        display: inline-block;
+      }
+      .ic:hover small {
+        transform: translateX(-6px);
+      }
+      /* details */
+      .dkp {
+        margin: 0 clamp(8px, 2vw, 28px);
+        border-radius: 40px;
+        background: linear-gradient(150deg, #12213a, #1a2e4f 55%, #263b59);
+        overflow: hidden;
+        box-shadow: 0 30px 80px #0008;
+      }
+      .tabs {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 6px 2px 12px;
+        margin-bottom: 18px;
+        scrollbar-width: none;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab {
+        flex: none;
+        padding: 9px 16px;
+        border: 1px solid var(--ln);
+        border-radius: 99px;
+        background: #ffffff08;
+        cursor: pointer;
+        color: #9fadc7;
+        font-size: 13px;
+        transition: 0.3s;
+      }
+      .tab:hover {
+        border-color: var(--g);
+      }
+      .tab.on {
+        background: linear-gradient(120deg, var(--g2), var(--g));
+        color: var(--n1);
+        border-color: transparent;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 26px #c5a46d44;
+      }
+      .panel {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 34px;
+        padding: 30px;
+        align-items: center;
+        min-height: 430px;
+      }
+      .panel h3 {
+        font-size: 28px;
+        margin: 0 0 8px;
+      }
+      .panel p {
+        color: #9fadc7;
+        margin: 0 0 14px;
+      }
+      .panel h4 {
+        margin: 16px 0 8px;
+        font-size: 13px;
+        color: var(--g2);
+      }
+      .pl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .pl span {
+        border: 1px solid var(--ln);
+        border-radius: 30px;
+        padding: 3px 11px;
+        font-size: 12px;
+        background: #ffffff08;
+      }
+      .pl.g span {
+        border-color: #c5a46d66;
+        color: var(--g2);
+        background: #c5a46d14;
+      }
+      .panel ul {
+        margin: 0;
+        padding-right: 19px;
+        font-size: 13px;
+        color: #dce2ed;
+      }
+      .panel li::marker {
+        color: var(--g);
+      }
+      .note {
+        font-size: 12px;
+        color: var(--mu);
+        margin-top: 14px !important;
+      }
+      .panel .btn {
+        margin-top: 18px;
+      }
+      .shot {
+        position: relative;
+        border-radius: 20px;
+        padding: 10px;
+        border: 1px solid #c5a46d55;
+        background: #0b152688;
+        box-shadow: 0 0 50px #c5a46d22;
+        overflow: hidden;
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 12px;
+      }
+      .sw .shot img {
+        animation:
+          mask 1s cubic-bezier(0.2, 0.9, 0.2, 1),
+          zm 1.4s ease-out;
+      }
+      @keyframes mask {
+        from {
+          clip-path: inset(0 0 0 100%);
+        }
+      }
+      @keyframes zm {
+        from {
+          transform: scale(1.2);
+        }
+      }
+      .sw .panel-t > * {
+        animation: fd 0.6s backwards;
+      }
+      .sw .panel-t > *:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .sw .panel-t > *:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .sw .panel-t > *:nth-child(3) {
+        animation-delay: 0.25s;
+      }
+      .sw .panel-t > *:nth-child(4) {
+        animation-delay: 0.35s;
+      }
+      .sw .panel-t > *:nth-child(5) {
+        animation-delay: 0.45s;
+      }
+      .sw .panel-t > *:nth-child(6) {
+        animation-delay: 0.55s;
+      }
+      .sw .panel-t > *:nth-child(n + 7) {
+        animation-delay: 0.65s;
+      }
+      .sw .pl span,
+      .sw li {
+        animation: li 0.5s backwards;
+        animation-delay: calc(0.3s + var(--k) * 0.07s);
+      }
+      @keyframes li {
+        from {
+          opacity: 0;
+          transform: translateX(-22px);
+        }
+      }
+      /* ecosystem */
+      .eco {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 26px;
+        align-items: center;
+      }
+      .svgbox {
+        padding: 14px;
+      }
+      .svgbox svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .ln {
+        stroke: #c5a46d;
+        stroke-width: 1.5;
+        stroke-dasharray: 6 8;
+        animation: dash 1.6s linear infinite;
+        opacity: 0.7;
+      }
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -28;
+        }
+      }
+      .nd {
+        cursor: pointer;
+        animation: nb 4s ease-in-out infinite;
+        animation-delay: calc(var(--k) * -0.5s);
+      }
+      .nd rect {
+        fill: #12213a;
+        stroke: #c5a46d66;
+        stroke-width: 1.2;
+        transition: 0.3s;
+      }
+      .nd text {
+        fill: #eef1f8;
+        font:
+          500 14px Alexandria,
+          sans-serif;
+        text-anchor: middle;
+        pointer-events: none;
+      }
+      .nd:hover rect,
+      .nd.on rect {
+        fill: #2a4a7c;
+        stroke: #e8d3a2;
+      }
+      .nd.on rect {
+        filter: drop-shadow(0 0 10px #c5a46d);
+      }
+      @keyframes nb {
+        0%,
+        100% {
+          translate: 0 -5px;
+        }
+        50% {
+          translate: 0 5px;
+        }
+      }
+      .nd .gl {
+        fill: none;
+        stroke: #e8d3a2;
+        stroke-width: 2;
+        opacity: 0;
+        animation: gl 8s linear infinite;
+        animation-delay: calc(var(--k) * 1s);
+      }
+      @keyframes gl {
+        0% {
+          opacity: 0;
+        }
+        5%,
+        12% {
+          opacity: 1;
+        }
+        20%,
+        100% {
+          opacity: 0;
+        }
+      }
+      .einfo {
+        padding: 26px;
+        min-height: 200px;
+      }
+      .einfo h3 {
+        margin: 0 0 8px;
+        font-size: 22px;
+      }
+      .einfo p {
+        color: #9fadc7;
+        margin: 0 0 16px;
+      }
+      .einfo.sw {
+        animation: fd 0.5s;
+      }
+      .echips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 16px;
+      }
+      .echips button {
+        border: 1px solid var(--ln);
+        border-radius: 30px;
+        padding: 3px 12px;
+        background: #ffffff08;
+        cursor: pointer;
+        font-size: 12px;
+        transition: 0.3s;
+      }
+      .echips button.on,
+      .echips button:hover {
+        border-color: var(--g);
+        color: var(--g2);
+        background: #c5a46d18;
+      }
+      /* growth */
+      .tl {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        position: relative;
+        padding-top: 34px;
+        --p: 0;
+      }
+      .tl:before,
+      .tl:after {
+        content: "";
+        position: absolute;
+        top: 13px;
+        right: 16.6%;
+        left: 16.6%;
+        height: 3px;
+        border-radius: 3px;
+      }
+      .tl:before {
+        background: #ffffff22;
+      }
+      .tl:after {
+        background: linear-gradient(270deg, var(--g2), var(--g));
+        transform-origin: right;
+        transform: scaleX(var(--p));
+        box-shadow: 0 0 14px var(--g);
+      }
+      .st {
+        position: relative;
+        padding: 24px 22px;
+        opacity: 0.35;
+        transform: translateY(30px);
+        transition: 0.7s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .st.on {
+        opacity: 1;
+        transform: none;
+      }
+      .st b {
+        position: absolute;
+        top: -34px;
+        right: 50%;
+        margin-right: -14px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--n2);
+        border: 2px solid #ffffff33;
+        color: var(--g2);
+        font-size: 11px;
+        z-index: 2;
+        transition: 0.5s;
+      }
+      .st.on b {
+        background: var(--g);
+        color: var(--n1);
+        border-color: var(--g2);
+        box-shadow:
+          0 0 0 8px #c5a46d22,
+          0 0 20px var(--g);
+        animation: pop 0.6s;
+      }
+      @keyframes pop {
+        40% {
+          transform: scale(1.5);
+        }
+      }
+      .st h3 {
+        margin: 0 0 4px;
+        font-size: 18px;
+      }
+      .st small {
+        color: var(--g2);
+        font-size: 12px;
+      }
+      .st ul {
+        padding-right: 19px;
+        margin: 12px 0 0;
+        color: #dce2ed;
+        font-size: 13px;
+      }
+      .st li::marker {
+        color: var(--g);
+      }
+      /* stories */
+      .stories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .story {
+        padding: 24px 20px;
+      }
+      .story h3 {
+        margin: 0 0 4px;
+        font-size: 17px;
+      }
+      .story p {
+        color: var(--mu);
+        font-size: 12px;
+        margin: 0 0 18px;
+      }
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .stp {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 0;
+        cursor: pointer;
+        color: var(--mu);
+        transition: 0.4s;
+      }
+      .stp i {
+        flex: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--ln);
+        background: #ffffff08;
+        font-style: normal;
+        font-size: 17px;
+        transition: 0.4s;
+        position: relative;
+        z-index: 1;
+      }
+      .stp:not(:last-child):after {
+        content: "";
+        position: absolute;
+        right: 19px;
+        top: 48px;
+        height: calc(100% - 40px);
+        width: 2px;
+        background: #ffffff1f;
+        z-index: 0;
+      }
+      .stp.done:not(:last-child):after {
+        background: linear-gradient(var(--g), #c5a46d55);
+      }
+      .stp.on {
+        color: var(--tx);
+      }
+      .stp.on i,
+      .stp.done i {
+        border-color: var(--g);
+        background: #c5a46d26;
+        color: var(--g2);
+      }
+      .stp.on i {
+        background: var(--g);
+        color: var(--n1);
+        transform: scale(1.12);
+        box-shadow:
+          0 0 0 7px #c5a46d1f,
+          0 0 22px #c5a46d66;
+      }
+      .cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+        padding: 44px;
+        border: 1px solid #c5a46d66;
+        border-radius: 26px;
+        background: linear-gradient(120deg, #0b1526, #263b59, #0b1526) 0 0/220%
+          100%;
+        animation: gs 9s ease-in-out infinite;
+        box-shadow: 0 30px 80px #000a;
+        overflow: hidden;
+      }
+      @keyframes gs {
+        50% {
+          background-position: 100% 0;
+        }
+      }
+      .cta h2 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 3.4vw, 40px);
+        line-height: 1.4;
+      }
+      .cta p {
+        color: #9fadc7;
+        margin: 0;
+      }
+      footer {
+        border-top: 1px solid var(--ln);
+        padding: 26px 0;
+        color: var(--mu);
+        font-size: 12px;
+        margin-top: 20px;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      :focus-visible {
+        outline: 2px solid var(--g);
+        outline-offset: 3px;
+        border-radius: 8px;
+      }
+      @media (max-width: 1100px) {
+        .g10 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ic {
+          min-height: 150px;
+        }
+      }
+      @media (max-width: 900px) {
+        .hg,
+        .panel,
+        .eco {
+          grid-template-columns: 1fr;
+        }
+        .stories {
+          grid-template-columns: 1fr;
+        }
+        .art {
+          max-width: 560px;
+          margin: 10px auto 0;
+          width: 100%;
+        }
+        .lk {
+          gap: 13px;
+          font-size: 12px;
+        }
+        .ac .bo {
+          display: none;
+        }
+      }
+      @media (max-width: 760px) {
+        .lk {
+          display: none;
+        }
+        .mb {
+          display: block;
+        }
+        header.op .lk {
+          display: flex;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          flex-direction: column;
+          gap: 0;
+          padding: 10px 24px 18px;
+          background: #0b1526f5;
+          border-bottom: 1px solid var(--ln);
+          box-shadow: 0 18px 30px #0006;
+        }
+        .lk a {
+          padding: 9px;
+        }
+        .ac > .btn {
+          display: none;
+        }
+        .nv {
+          height: 70px;
+        }
+        section {
+          padding: 62px 0;
+        }
+        .hero {
+          padding: 50px 0 70px;
+        }
+        .dkp {
+          border-radius: 26px;
+        }
+        .panel {
+          padding: 20px;
+        }
+        .shot img {
+          height: 220px;
+        }
+        .cta {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 26px;
+        }
+        .foot {
+          flex-wrap: wrap;
+        }
+        .tl {
+          grid-template-columns: 1fr;
+          padding: 0 34px 0 0;
+        }
+        .tl:before,
+        .tl:after {
+          top: 0;
+          bottom: 0;
+          right: 13px;
+          left: auto;
+          width: 3px;
+          height: auto;
+        }
+        .tl:after {
+          transform: scaleY(var(--p));
+          transform-origin: top;
+        }
+        .st b {
+          top: 22px;
+          right: -34px;
+          margin: 0;
+        }
+        .st {
+          padding: 16px 18px;
+        }
+        .ch {
+          font-size: 11px;
+          padding: 6px 10px;
+        }
+        .c2 {
+          left: -6px;
+        }
+        .c3 {
+          right: -6px;
+        }
+      }
+      @media (max-width: 420px) {
+        .wrap {
+          width: calc(100% - 28px);
+        }
+        .ic {
+          padding: 16px 13px;
+        }
+        .ic h3 {
+          font-size: 14px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          scroll-behavior: auto !important;
+          animation-iteration-count: 1 !important;
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .tk > div {
+          animation: none;
+        }
+        .w i {
+          opacity: 1;
+          transform: none;
+          filter: none;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+        .st {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ===== v2: intro, dust, glow, confetti, fixes ===== */
+      .art .core:before {
+        background: conic-gradient(
+          from var(--a),
+          transparent,
+          #c5a46d,
+          #fff6,
+          transparent 40%
+        );
+        animation: spin2 5s linear infinite;
+      }
+      @keyframes spin2 {
+        to {
+          --a: 360deg;
+        }
+      }
+      @keyframes mq {
+        to {
+          transform: translateX(-33.333%);
+        }
+      }
+      #intro {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        clip-path: inset(0);
+        background: radial-gradient(circle at 50% 50%, #1a2e4f, #0b1526 70%);
+        animation: lift 0.9s cubic-bezier(0.77, 0, 0.18, 1) 1.5s forwards;
+      }
+      #intro span {
+        font:
+          800 clamp(64px, 18vw, 170px)/1.3 Alexandria,
+          sans-serif;
+        background: linear-gradient(90deg, #c5a46d, #fff, #c5a46d) 0 0/250% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation:
+          pop2 1s cubic-bezier(0.2, 0.9, 0.2, 1) both,
+          sh 2s linear infinite;
+      }
+      #intro i {
+        position: absolute;
+        top: calc(50% + clamp(40px, 10vw, 100px));
+        height: 2px;
+        width: min(320px, 60vw);
+        background: linear-gradient(90deg, transparent, var(--g2), transparent);
+        transform: scaleX(0);
+        animation: ln 1s 0.4s forwards;
+      }
+      @keyframes pop2 {
+        from {
+          opacity: 0;
+          filter: blur(18px);
+          transform: scale(0.7);
+        }
+      }
+      @keyframes ln {
+        to {
+          transform: scaleX(1);
+        }
+      }
+      @keyframes lift {
+        to {
+          clip-path: inset(0 0 100% 0);
+          visibility: hidden;
+        }
+      }
+      .nointro #intro {
+        display: none;
+      }
+      html:not(.nointro) .hero .w i {
+        animation-delay: calc(1.7s + var(--k) * 0.1s);
+      }
+      html:not(.nointro) .hero h1 em .w i {
+        animation-delay: calc(1.7s + var(--k) * 0.1s), 0s;
+      }
+      html:not(.nointro) .badge {
+        animation-delay: 1.6s;
+      }
+      html:not(.nointro) .art .core {
+        animation-delay: 1.9s;
+      }
+      html:not(.nointro) .lead {
+        animation-delay: 2.5s;
+      }
+      html:not(.nointro) .hero .row {
+        animation-delay: 2.7s;
+      }
+      #glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 460px;
+        height: 460px;
+        margin: -230px 0 0 -230px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, #c5a46d22, transparent 65%);
+        z-index: 0;
+        will-change: transform;
+      }
+      #fx {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 90;
+      }
+      #dust {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .glass {
+        --mx: 50%;
+        --my: 50%;
+      }
+      .glass:hover {
+        background:
+          radial-gradient(
+            280px circle at var(--mx) var(--my),
+            #c5a46d33,
+            transparent 70%
+          ),
+          linear-gradient(145deg, #ffffff0f, #ffffff04);
+      }
+      .title.reveal {
+        filter: blur(10px);
+        transform: translateY(40px) scale(0.96);
+        clip-path: inset(0 0 100% 0);
+        transition: 1s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .title.reveal.in {
+        filter: none;
+        transform: none;
+        clip-path: inset(-20% -5%);
+      }
+      .ey.in:before {
+        animation: ln2 0.9s 0.15s backwards;
+      }
+      @keyframes ln2 {
+        from {
+          width: 0;
+        }
+      }
+      .o1 {
+        translate: 0 calc(var(--sy, 0) * -0.3px);
+      }
+      .o2 {
+        translate: 0 calc(var(--sy, 0) * 0.2px);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #intro {
+          display: none;
+        }
+        .badge,
+        .lead,
+        .hero .row,
+        .art .core {
+          animation: none !important;
+        }
+        .title.reveal {
+          filter: none;
+          transform: none;
+          clip-path: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="site-theme.css" />
+    <link rel="icon" href="sa7sa7-icon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div id="intro" aria-hidden="true"><i></i><span>صحصح</span></div>
+    <div id="bar"></div>
+    <header id="hd">
+      <div class="wrap nv">
+        <a class="logo" href="index.html#home"
+          ><img src="sa7sa7-logo.svg" alt="صحصح"
+        /></a>
+        <nav class="lk" id="lk">
+          <a href="index.html#home">الرئيسية</a
+          ><a href="features.html">المميزات</a
+          ><a href="solutions.html">الحلول</a
+          ><a class="active" href="sectors.html">القطاعات</a
+          ><a href="pricing.html">الأسعار</a><a href="docs.html">شرح</a><a href="about.html">من نحن</a
+          ><a href="contact.html">تواصل معنا</a>
+        </nav>
+        <div class="ac">
+          <a class="btn bo" href="contact.html">احجز عرضاً</a
+          ><a class="btn bg" href="pricing.html">اكتشف الأسعار</a
+          ><button class="mb" id="mb" type="button" aria-label="القائمة">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <i class="orb o1"></i><i class="orb o2"></i>
+        <div class="wrap hg">
+          <div>
+            <span class="badge">◆ حلول متكاملة لمختلف القطاعات</span>
+            <h1 id="h1">
+              من تجارة التجزئة للخدمات... <em>صحصح معاك في كل خطوة</em>
+            </h1>
+            <p class="lead">
+              مهما كان مجال شغلك، صحصح بيوفر لك منظومة ذكية تساعدك تنظم عملياتك،
+              وتتابع أداء نشاطك، وتدير تفاصيل شغلك من مكان واحد.
+            </p>
+            <div class="row">
+              <a class="btn bg" href="#industries">اكتشف القطاعات</a
+              ><a class="btn bo" href="contact.html">احجز عرضاً توضيحياً</a>
+            </div>
+          </div>
+          <div class="art" id="art">
+            <div class="core glass">
+              <img
+                src="assets/screenshots/dashboard.png"
+                alt="لوحة تحكم صحصح المركزية"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="tk" aria-hidden="true"><div id="tkt"></div></div>
+      <section id="industries">
+        <div class="wrap">
+          <div class="ey">القطاعات التي نخدمها</div>
+          <h2 class="title">قطاعات مختلفة... ومنظومة واحدة تجمعها</h2>
+          <p class="sub">
+            كل قطاع له طبيعة مختلفة، لكن الإدارة الناجحة محتاجة رؤية واضحة وتحكم
+            في كل التفاصيل. صحصح بيساعدك تدير نشاطك من خلال أدوات متكاملة.
+          </p>
+          <div class="g10" id="g10"></div>
+        </div>
+      </section>
+      <section id="details" class="dkp">
+        <div class="wrap">
+          <div class="ey">تفاصيل القطاع</div>
+          <h2 class="title">كل قطاع له احتياجاته... وصحصح يجمع إدارته</h2>
+          <p class="sub">
+            اختار قطاعك وشوف التحديات الشائعة والوحدات المرتبطة به. تفاصيل
+            التهيئة تختلف بحسب احتياج النشاط.
+          </p>
+          <div class="tabs" id="tabs"></div>
+          <div class="panel glass" id="panel" aria-live="polite"></div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap">
+          <div class="cta reveal">
+            <div>
+              <h2>قطاعك يستحق إدارة أذكى</h2>
+              <p>
+                اكتشف كيف يساعدك صحصح في تنظيم نشاطك ومتابعة تفاصيل شغلك من مكان
+                واحد.
+              </p>
+            </div>
+            <div class="row" style="animation: none">
+              <a class="btn bg pulse" href="index.html">اكتشف صحصح</a
+              ><a class="btn bo" href="contact.html">احجز عرضاً توضيحياً</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <a class="logo" href="index.html#home"
+          ><img src="sa7sa7-logo.svg" alt="صحصح" /></a
+        ><span>© ٢٠٢٦ صحصح — منظومة حساباتي ERP</span
+        ><a href="contact.html">تواصل معنا</a>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const R = matchMedia("(prefers-reduced-motion: reduce)").matches,
+          $ = (s) => document.querySelector(s),
+          $$ = (s) => [...document.querySelectorAll(s)];
+        const hd = $("#hd"),
+          bar = $("#bar");
+        $("#mb").onclick = () => hd.classList.toggle("op");
+        $$("#lk a").forEach((a) =>
+          a.addEventListener("click", () => hd.classList.remove("op")),
+        );
+        function onScroll() {
+          hd.classList.toggle("sc", scrollY > 20);
+          bar.style.transform =
+            "scaleX(" +
+            Math.min(
+              1,
+              scrollY /
+                Math.max(
+                  1,
+                  document.documentElement.scrollHeight - innerHeight,
+                ),
+            ) +
+            ")";
+        }
+        addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        /* hero text split */
+        (function () {
+          let k = 0;
+          const walk = (n) =>
+            [...n.childNodes].forEach((c) => {
+              if (c.nodeType === 3) {
+                const f = document.createDocumentFragment();
+                c.textContent
+                  .split(/\s+/)
+                  .filter(Boolean)
+                  .forEach((w) => {
+                    const s = document.createElement("span");
+                    s.className = "w";
+                    s.innerHTML = '<i style="--k:' + k++ + '">' + w + "</i>";
+                    f.append(s, " ");
+                  });
+                c.replaceWith(f);
+              } else if (c.nodeType === 1) walk(c);
+            });
+          walk($("#h1"));
+        })();
+        if (!R && matchMedia("(hover:hover)").matches) {
+          const art = $("#art");
+          addEventListener(
+            "pointermove",
+            (e) => {
+              art.style.setProperty(
+                "--px",
+                ((e.clientX / innerWidth - 0.5) * 22).toFixed(1),
+              );
+              art.style.setProperty(
+                "--py",
+                ((e.clientY / innerHeight - 0.5) * 16).toFixed(1),
+              );
+            },
+            { passive: true },
+          );
+        }
+        /* data */
+        const U = {
+          s: "المبيعات",
+          p: "نقطة البيع",
+          m: "المخزون",
+          b: "الفروع",
+          r: "التقارير",
+          a: "الحسابات والخزينة",
+          c: "العملاء",
+          y: "المشتريات",
+          cs: "العملاء والموردين",
+          x: "المستخدمون والصلاحيات",
+        };
+        const S = [
+          {
+            n: "الملابس والأزياء",
+            i: "◇",
+            d: "مبيعات المنتجات ومتابعة المخزون عبر الفروع.",
+            w: "متاجر الأزياء بتتعامل مع أصناف كتير وحركة بيع يومية. صحصح بيساعدك تسجل المبيعات وتتابع أرصدة المنتجات وتراجع الأداء من تقارير واضحة.",
+            p: [
+              "متاجر الملابس",
+              "متاجر الأحذية",
+              "الحقائب والإكسسوارات",
+              "محلات الأزياء",
+              "متاجر متعددة الفروع",
+            ],
+            c: [
+              "متابعة رصيد كل صنف",
+              "تشتت المبيعات بين الفروع",
+              "معرفة الأصناف الأكثر مبيعاً",
+            ],
+            u: "spmbr",
+            img: "inventory.png",
+          },
+          {
+            n: "السوبر ماركت والتجزئة الغذائية",
+            i: "▦",
+            d: "نقطة بيع سريعة ومتابعة للأصناف والأرصدة.",
+            w: "الأنشطة اللي فيها أصناف كتيرة محتاجة سرعة في البيع ومتابعة دقيقة للمخزون. صحصح بيجمع نقطة البيع والمخزون والتقارير في مكان واحد.",
+            p: [
+              "السوبر ماركت",
+              "الميني ماركت",
+              "محلات البقالة",
+              "المنتجات الغذائية",
+              "التجزئة الصغيرة والمتوسطة",
+            ],
+            c: [
+              "كثرة الأصناف وتعددها",
+              "سرعة تسجيل البيع",
+              "متابعة النواقص والجرد",
+            ],
+            u: "pmar",
+            img: "pos.png",
+          },
+          {
+            n: "المطاعم والكافيهات",
+            i: "◉",
+            d: "البيع والخزينة وتقارير الأداء.",
+            w: "تابع عمليات البيع وحركة الخزينة والمخزون، وراجع أداء نشاطك من التقارير.",
+            p: [
+              "المطاعم",
+              "الكافيهات",
+              "محلات الحلويات",
+              "المخابز",
+              "الوجبات السريعة",
+            ],
+            c: [
+              "تعدد عمليات البيع وطرق السداد",
+              "متابعة الإيرادات والمصروفات",
+              "مراجعة أداء النشاط",
+            ],
+            u: "psamr",
+            note: "الوحدات المعروضة هي وحدات البيع والخزينة والمخزون والتقارير.",
+            img: "pos.png",
+          },
+          {
+            n: "الإلكترونيات والتكنولوجيا",
+            i: "▣",
+            d: "أصناف وفواتير وحسابات العملاء.",
+            w: "تنظيم المنتجات ومتابعة المخزون وإدارة عمليات البيع في متاجر الأجهزة والتكنولوجيا، مع حساب واضح لكل عميل.",
+            p: [
+              "محلات الموبايلات",
+              "متاجر الكمبيوتر",
+              "محلات الإلكترونيات",
+              "الأجهزة الكهربائية",
+              "الإكسسوارات التقنية",
+            ],
+            c: [
+              "تعدد المنتجات والموديلات",
+              "متابعة الأرصدة المتاحة",
+              "تنظيم الفواتير وحسابات العملاء",
+            ],
+            u: "spmcr",
+            img: "sales.png",
+          },
+          {
+            n: "التجارة والتوزيع",
+            i: "⇄",
+            d: "عملاء ومخزون وفروع وحسابات.",
+            w: "متابعة حركة البيع والمخزون والعملاء وتنظيم العمليات التجارية بصورة أكثر وضوحاً.",
+            p: [
+              "شركات التجارة",
+              "شركات التوزيع",
+              "تجار الجملة",
+              "تجار التجزئة",
+              "شركات متعددة الفروع",
+            ],
+            c: [
+              "تعدد العملاء والعمليات",
+              "تتبع المخزون بين المواقع",
+              "متابعة الفروع والحسابات",
+            ],
+            u: "sy,cs,m,b,r",
+            img: "branches.png",
+          },
+          {
+            n: "الأدوات المنزلية والمفروشات",
+            i: "⌂",
+            d: "أصناف ومبيعات وحركة مخزون.",
+            w: "نظّم أصنافك وسجّل المبيعات وتابع حركة المخزون في متاجر مستلزمات المنزل.",
+            p: [
+              "الأدوات المنزلية",
+              "المفروشات",
+              "محلات الأثاث",
+              "متاجر الديكور",
+              "مستلزمات المنزل",
+            ],
+            c: [
+              "تعدد الأصناف والكميات",
+              "متابعة البيع والمخزون",
+              "حركة المنتجات بين الفروع",
+            ],
+            u: "spmbr",
+            img: "inventory.png",
+          },
+          {
+            n: "الصيدليات والمستلزمات الطبية",
+            i: "✚",
+            d: "الأصناف والبيع ومتابعة المخزون.",
+            w: "تنظيم الأصناف ومتابعة المبيعات والمخزون في الأنشطة اللي بتعتمد على تعدد المنتجات.",
+            p: ["الصيدليات", "المستلزمات الطبية", "المنتجات الصحية"],
+            c: [
+              "تعدد الأصناف والمنتجات",
+              "متابعة أرصدة المخزون",
+              "تنظيم عمليات البيع ومراجعتها",
+            ],
+            u: "spmr",
+            note: "الوحدات المعروضة عامة لتنظيم الأصناف والبيع والمخزون.",
+            img: "inventory.png",
+          },
+          {
+            n: "التجميل والعناية الشخصية",
+            i: "✦",
+            d: "منتجات ومبيعات ومخزون.",
+            w: "إدارة متاجر مستحضرات التجميل ومتابعة المنتجات والمبيعات والمخزون.",
+            p: [
+              "مستحضرات التجميل",
+              "متاجر العطور",
+              "العناية بالبشرة",
+              "العناية بالشعر",
+              "العناية الشخصية",
+            ],
+            c: ["تعدد الماركات والأصناف", "متابعة الأرصدة", "مراجعة المبيعات"],
+            u: "spmr",
+            img: "sales.png",
+          },
+          {
+            n: "قطع غيار السيارات",
+            i: "◍",
+            d: "أصناف ومخزون وعمليات بيع.",
+            w: "تنظيم الأصناف ومتابعة المخزون وعمليات البيع في متاجر قطع الغيار.",
+            p: ["محلات قطع الغيار", "إكسسوارات السيارات", "مستلزمات السيارات"],
+            c: [
+              "كثرة الأصناف الصغيرة",
+              "متابعة الأرصدة",
+              "تنظيم البيع والفواتير",
+            ],
+            u: "sy,m,r",
+            img: "inventory.png",
+          },
+          {
+            n: "الشركات والأنشطة متعددة الفروع",
+            i: "⌖",
+            d: "إدارة مركزية وصلاحيات وحركة مخزون.",
+            w: "إدارة العمليات ومتابعة الفروع والمخزون والصلاحيات من خلال منظومة موحدة.",
+            p: [
+              "سلاسل المتاجر",
+              "الشركات التجارية",
+              "المؤسسات متعددة الفروع",
+              "مجموعات المتاجر",
+              "أنشطة تحتاج إدارة مركزية",
+            ],
+            c: [
+              "صعوبة متابعة كل فرع",
+              "تشتت بيانات العمليات",
+              "اختلاف صلاحيات الموظفين",
+            ],
+            u: "b,m,x,r",
+            img: "branches.png",
+          },
+        ];
+        const units = (S) =>
+          S.u.includes(",") ? S.u.split(",") : S.u.split("");
+        $("#tkt").innerHTML = S.map((x) => "<span>" + x.n + "</span>")
+          .join("")
+          .repeat(3);
+        /* grid + tabs + panel */
+        const g10 = $("#g10"),
+          tabs = $("#tabs"),
+          panel = $("#panel");
+        function show(i, quiet) {
+          $$(".ic").forEach((c, n) => {
+            c.classList.toggle("on", n === i);
+            c.setAttribute("aria-pressed", n === i);
+          });
+          $$(".tab").forEach((t, n) => t.classList.toggle("on", n === i));
+          const d = S[i];
+          panel.innerHTML =
+            '<div class="panel-t"><h3>' +
+            d.n +
+            "</h3><p>" +
+            d.w +
+            '</p><h4>مين بيستفيد</h4><div class="pl">' +
+            d.p
+              .map((x, k) => '<span style="--k:' + k + '">' + x + "</span>")
+              .join("") +
+            "</div><h4>تحديات شائعة</h4><ul>" +
+            d.c
+              .map((x, k) => '<li style="--k:' + k + '">' + x + "</li>")
+              .join("") +
+            '</ul><h4>الوحدات المرتبطة في صحصح</h4><div class="pl g">' +
+            units(d)
+              .map((x, k) => '<span style="--k:' + k + '">' + U[x] + "</span>")
+              .join("") +
+            "</div>" +
+            (d.note ? '<p class="note">' + d.note + "</p>" : "") +
+            '<a class="btn bg" href="solutions.html">اكتشف الحلول المناسبة</a></div><div class="shot"><img src="assets/screenshots/' +
+            d.img +
+            '" alt="واجهة من صحصح مرتبطة بقطاع ' +
+            d.n +
+            '"></div>';
+          panel.classList.remove("sw");
+          if (!quiet) {
+            void panel.offsetWidth;
+            panel.classList.add("sw");
+          }
+        }
+        S.forEach((d, i) => {
+          const c = document.createElement("button");
+          c.type = "button";
+          c.className = "glass ic reveal";
+          c.setAttribute("aria-pressed", "false");
+          c.innerHTML =
+            '<div class="ico">' +
+            d.i +
+            "</div><h3>" +
+            d.n +
+            "</h3><p>" +
+            d.d +
+            "</p><small>اكتشف التفاصيل ←</small>";
+          c.onclick = () => {
+            show(i);
+            $("#details").scrollIntoView({
+              behavior: R ? "auto" : "smooth",
+              block: "start",
+            });
+          };
+          c.addEventListener("pointermove", (e) => {
+            if (R || e.pointerType !== "mouse") return;
+            const r = c.getBoundingClientRect();
+            c.style.setProperty(
+              "--ry",
+              (((e.clientX - r.left) / r.width - 0.5) * -10).toFixed(1) + "deg",
+            );
+            c.style.setProperty(
+              "--rx",
+              (((e.clientY - r.top) / r.height - 0.5) * 8).toFixed(1) + "deg",
+            );
+          });
+          c.addEventListener("pointerleave", () => {
+            c.style.setProperty("--ry", "0deg");
+            c.style.setProperty("--rx", "0deg");
+          });
+          g10.appendChild(c);
+          const t = document.createElement("button");
+          t.type = "button";
+          t.className = "tab";
+          t.textContent = d.n;
+          t.onclick = () => show(i);
+          tabs.appendChild(t);
+        });
+        show(0, true);
+        /* reveal */
+        $$(".ey,.title,.sub").forEach((e) => e.classList.add("reveal"));
+        const all = $$(".reveal");
+        if (!R && "IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (es) =>
+              es.forEach((e) => {
+                if (e.isIntersecting) {
+                  const t = e.target,
+                    d = ([...t.parentNode.children].indexOf(t) % 5) * 80;
+                  t.style.setProperty("--d", d + "ms");
+                  if (!t.classList.contains("ic")) {
+                    t.style.transitionDelay = d + "ms";
+                    setTimeout(() => (t.style.transitionDelay = ""), 1200);
+                  }
+                  t.classList.add("in");
+                  io.unobserve(t);
+                }
+              }),
+            { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+          );
+          all.forEach((x) => io.observe(x));
+        } else all.forEach((x) => x.classList.add("in"));
+
+        /* ===== v2 ===== */
+        (function () {
+          setTimeout(() => {
+            const n = $("#intro");
+            n && n.remove();
+          }, 2600);
+          if (R) return;
+          const hero = $(".hero");
+          addEventListener(
+            "scroll",
+            () => hero.style.setProperty("--sy", Math.min(scrollY, 900)),
+            { passive: true },
+          );
+          /* gold dust */
+          const c = document.createElement("canvas");
+          c.id = "dust";
+          hero.prepend(c);
+          const x = c.getContext("2d");
+          let W,
+            H,
+            P = [],
+            m = { x: -999, y: -999 },
+            on = true;
+          const fit = () => {
+            const r = hero.getBoundingClientRect(),
+              d = devicePixelRatio || 1;
+            W = r.width;
+            H = r.height;
+            c.width = W * d;
+            c.height = H * d;
+            x.setTransform(d, 0, 0, d, 0, 0);
+            P = Array.from({ length: Math.round(W / 22) }, () => ({
+              x: Math.random() * W,
+              y: Math.random() * H,
+              r: Math.random() * 1.8 + 0.6,
+              v: Math.random() * 0.35 + 0.1,
+              p: Math.random() * 6,
+            }));
+          };
+          fit();
+          addEventListener("resize", fit);
+          hero.addEventListener("pointermove", (e) => {
+            const r = hero.getBoundingClientRect();
+            m.x = e.clientX - r.left;
+            m.y = e.clientY - r.top;
+          });
+          hero.addEventListener("pointerleave", () => (m.x = -999));
+          new IntersectionObserver((e) => (on = e[0].isIntersecting)).observe(
+            hero,
+          );
+          (function f(t) {
+            requestAnimationFrame(f);
+            if (!on) return;
+            x.clearRect(0, 0, W, H);
+            P.forEach((a, i) => {
+              a.y -= a.v;
+              a.x += Math.sin(t / 1500 + a.p) * 0.25;
+              const dx = a.x - m.x,
+                dy = a.y - m.y,
+                d = Math.hypot(dx, dy) || 1;
+              if (d < 120) {
+                a.x += (dx / d) * (120 - d) * 0.03;
+                a.y += (dy / d) * (120 - d) * 0.03;
+              }
+              if (a.y < -5) {
+                a.y = H + 5;
+                a.x = Math.random() * W;
+              }
+              x.globalAlpha = 0.35 + 0.5 * Math.sin(t / 700 + a.p) ** 2;
+              x.fillStyle = "#e8d3a2";
+              x.beginPath();
+              x.arc(a.x, a.y, a.r, 0, 7);
+              x.fill();
+              for (let j = i + 1; j < P.length; j++) {
+                const b = P[j],
+                  q = Math.hypot(a.x - b.x, a.y - b.y);
+                if (q < 90) {
+                  x.globalAlpha = (1 - q / 90) * 0.25;
+                  x.strokeStyle = "#c5a46d";
+                  x.beginPath();
+                  x.moveTo(a.x, a.y);
+                  x.lineTo(b.x, b.y);
+                  x.stroke();
+                }
+              }
+            });
+          })(0);
+          /* confetti */
+          const fx = document.createElement("canvas");
+          fx.id = "fx";
+          document.body.append(fx);
+          const q = fx.getContext("2d"),
+            col = ["#c5a46d", "#e8d3a2", "#ffffff", "#6aa6ff", "#ffd36b"];
+          let C = [],
+            run = 0;
+          const rs = () => {
+            fx.width = innerWidth;
+            fx.height = innerHeight;
+          };
+          rs();
+          addEventListener("resize", rs);
+          function loop() {
+            run = 1;
+            q.clearRect(0, 0, fx.width, fx.height);
+            C = C.filter((p) => p.l > 0);
+            C.forEach((p) => {
+              p.vy += 0.28;
+              p.vx *= 0.985;
+              p.x += p.vx;
+              p.y += p.vy;
+              p.r += p.vr;
+              p.l -= 0.011;
+              q.save();
+              q.globalAlpha = Math.max(p.l, 0);
+              q.translate(p.x, p.y);
+              q.rotate(p.r);
+              q.fillStyle = p.c;
+              q.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+              q.restore();
+            });
+            if (C.length) requestAnimationFrame(loop);
+            else {
+              run = 0;
+              q.clearRect(0, 0, fx.width, fx.height);
+            }
+          }
+          function burst(px, py, n) {
+            for (let i = 0; i < n; i++) {
+              const a = Math.random() * 6.283,
+                s = Math.random() * 9 + 3;
+              C.push({
+                x: px,
+                y: py,
+                vx: Math.cos(a) * s,
+                vy: Math.sin(a) * s - 5,
+                w: Math.random() * 7 + 4,
+                h: Math.random() * 4 + 3,
+                r: Math.random() * 6,
+                vr: Math.random() * 0.4 - 0.2,
+                c: col[i % 5],
+                l: 1,
+              });
+            }
+            run || loop();
+          }
+          addEventListener("click", (e) => {
+            const t = e.target.closest(".ic,.tab,.nd,.stp,.btn,.echips button");
+            if (!t) return;
+            const r = t.getBoundingClientRect();
+            burst(
+              e.detail ? e.clientX : r.left + r.width / 2,
+              e.detail ? e.clientY : r.top + r.height / 2,
+              t.matches(".btn") ? 30 : 20,
+            );
+          });
+          new IntersectionObserver(
+            (es, o) => {
+              if (es[0].isIntersecting) {
+                [0.25, 0.5, 0.75].forEach((f, i) =>
+                  setTimeout(
+                    () => burst(innerWidth * f, innerHeight * 0.55, 40),
+                    i * 220,
+                  ),
+                );
+                o.disconnect();
+              }
+            },
+            { threshold: 0.6 },
+          ).observe($(".cta"));
+          /* glow, card spotlight, magnetic buttons */
+          if (matchMedia("(hover:hover)").matches) {
+            const gl = document.createElement("div");
+            gl.id = "glow";
+            document.body.append(gl);
+            addEventListener(
+              "pointermove",
+              (e) => {
+                gl.style.transform =
+                  "translate3d(" + e.clientX + "px," + e.clientY + "px,0)";
+                const g = e.target.closest(".glass");
+                if (g) {
+                  const r = g.getBoundingClientRect();
+                  g.style.setProperty("--mx", e.clientX - r.left + "px");
+                  g.style.setProperty("--my", e.clientY - r.top + "px");
+                }
+                const b = e.target.closest(".btn");
+                if (b) {
+                  const r = b.getBoundingClientRect();
+                  b.style.translate =
+                    (e.clientX - r.left - r.width / 2) * 0.25 +
+                    "px " +
+                    (e.clientY - r.top - r.height / 2) * 0.35 +
+                    "px";
+                }
+              },
+              { passive: true },
+            );
+            addEventListener("pointerout", (e) => {
+              const b = e.target.closest(".btn");
+              if (b) b.style.translate = "";
+            });
+          }
+        })();
+      })();
+    </script>
+    <script src="site-theme.js"></script>
+  </body>
+</html>
